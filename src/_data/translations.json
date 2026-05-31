@@ -1,0 +1,120 @@
+{
+  "en": {
+    "nav": {
+      "home": "Home",
+      "about": "About",
+      "experience": "Experience",
+      "projects": "Projects",
+      "blog": "Blog",
+      "contact": "Contact"
+    },
+    "hero": {
+      "greeting": "Hi, I'm",
+      "tagline": "Software developer | Web enthusiast",
+      "about": "I work as a full-time web developer in both client-facing and management applications. I specialize in the <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\">back-of-the-front-end</a> designing client architecture, integrating third-party APIs, managing business logic and working with both designers and backend developers to ensure product quality.",
+      "cta": {
+        "projects": "View Projects",
+        "cv": "Download CV"
+      }
+    },
+    "about": {
+      "title": "About Me",
+      "subtitle": "What I Do",
+      "skills": {
+        "frontend": "Frontend Development",
+        "backend": "Backend Development",
+        "mobile": "Mobile Apps",
+        "uiux": "UI/UX Design"
+      }
+    },
+    "experience": {
+      "title": "Experience",
+      "present": "Present",
+      "remote": "Remote",
+      "duration": "Duration"
+    },
+    "projects": {
+      "title": "Featured Projects",
+      "viewAll": "View All Projects",
+      "viewSource": "View Source",
+      "liveDemo": "Live Demo"
+    },
+    "blog": {
+      "title": "Recent Articles",
+      "viewAll": "View All Articles",
+      "readMore": "Read More",
+      "readTime": "min read"
+    },
+    "contact": {
+      "title": "Let's Connect",
+      "subtitle": "Feel free to reach out for collaborations or just a friendly chat",
+      "email": "Email",
+      "copy": "Copy to clipboard",
+      "copied": "Copied!",
+      "social": "Find me on"
+    },
+    "footer": {
+      "rights": "All rights reserved",
+      "builtWith": "Built with Eleventy & love"
+    }
+  },
+  "es": {
+    "nav": {
+      "home": "Inicio",
+      "about": "Sobre mí",
+      "experience": "Experiencia",
+      "projects": "Proyectos",
+      "blog": "Blog",
+      "contact": "Contacto"
+    },
+    "hero": {
+      "greeting": "Hola, soy",
+      "tagline": "Desarrollador de software | Entusiasta web",
+      "about": "Trabajo como desarrollador web full-time en aplicaciones tanto de cara al cliente como de gestión. Me especializo en el <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\">back-of-the-front-end</a> diseñando arquitectura de cliente, integrando APIs de terceros, gestionando lógica de negocio y trabajando tanto con diseñadores como con desarrolladores backend para asegurar la calidad del producto.",
+      "cta": {
+        "projects": "Ver Proyectos",
+        "cv": "Descargar CV"
+      }
+    },
+    "about": {
+      "title": "Sobre mí",
+      "subtitle": "Lo que hago",
+      "skills": {
+        "frontend": "Desarrollo Frontend",
+        "backend": "Desarrollo Backend",
+        "mobile": "Aplicaciones Móviles",
+        "uiux": "Diseño UI/UX"
+      }
+    },
+    "experience": {
+      "title": "Experiencia",
+      "present": "Actualidad",
+      "remote": "Remoto",
+      "duration": "Duración"
+    },
+    "projects": {
+      "title": "Proyectos Destacados",
+      "viewAll": "Ver Todos los Proyectos",
+      "viewSource": "Ver Código",
+      "liveDemo": "Demo en Vivo"
+    },
+    "blog": {
+      "title": "Artículos Recientes",
+      "viewAll": "Ver Todos los Artículos",
+      "readMore": "Leer Más",
+      "readTime": "min de lectura"
+    },
+    "contact": {
+      "title": "Conectemos",
+      "subtitle": "No dudes en contactarme para colaboraciones o simplemente para charlar",
+      "email": "Email",
+      "copy": "Copiar al portapapeles",
+      "copied": "¡Copiado!",
+      "social": "Encuéntrame en"
+    },
+    "footer": {
+      "rights": "Todos los derechos reservados",
+      "builtWith": "Hecho con Eleventy y cariño"
+    }
+  }
+}

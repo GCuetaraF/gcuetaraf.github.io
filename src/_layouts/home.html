@@ -1,0 +1,48 @@
+---
+css:
+  - /css/variables.css
+  - /css/base.css
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    {% include "components/metadata.html" %}
+
+    {% for href in css %}
+      <link rel="stylesheet" href="{{ href | url }}">
+    {% endfor %}
+
+    {% block script %}{% endblock %}
+  </head>
+  <body>
+    <!-- Language Switcher (Fixed) -->
+    {% include "components/language-switcher.html" %}
+
+    <main>
+      <!-- Hero Section -->
+      {% include "components/hero.html" %}
+
+      <!-- About Section -->
+      {% include "components/about.html" %}
+
+      <!-- Experience Section -->
+      {% include "components/experience.html" %}
+
+      <!-- Projects Section -->
+      {% include "components/projects.html" %}
+
+      <!-- Recent Blog Posts Section -->
+      {% include "components/blog-preview.html" %}
+
+      <!-- Contact Section -->
+      {% include "components/contact.html" %}
+    </main>
+
+    <!-- Scripts -->
+    <script src="/js/language.js"></script>
+    <script src="/js/animations.js"></script>
+    <script src="/js/clipboard.js"></script>
+    {% block scripts %}{% endblock %}
+  </body>
+</html>

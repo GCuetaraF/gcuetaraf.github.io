@@ -1,0 +1,46 @@
+[
+  {
+    "name": "personal-media-tracker",
+    "url": "https://github.com/kulugary/personal-media-tracker",
+    "description": {
+      "en": "A personal media tracking application for managing movies, series, and books.",
+      "es": "Una aplicación personal para el seguimiento de películas, series y libros."
+    },
+    "technologies": ["React", "Node.js", "Express"],
+    "featured": true,
+    "order": 1
+  },
+  {
+    "name": "rp-sheet-front",
+    "url": "https://github.com/kulugary/rp-sheet-front",
+    "description": {
+      "en": "Frontend for a role-playing game character sheet application.",
+      "es": "Frontend para una aplicación de hojas de personajes de juegos de rol."
+    },
+    "technologies": ["React", "TypeScript"],
+    "featured": true,
+    "order": 2
+  },
+  {
+    "name": "eg-lierno-app",
+    "url": "https://github.com/kulugary/eg-lierno-app",
+    "description": {
+      "en": "Campaign management application for tabletop RPG games.",
+      "es": "Aplicación de gestión de campañas para juegos de rol de mesa."
+    },
+    "technologies": ["React", "Node.js"],
+    "featured": true,
+    "order": 3
+  },
+  {
+    "name": "learning-p5.js",
+    "url": "https://github.com/kulugary/learning-p5.js",
+    "description": {
+      "en": "Creative coding experiments and projects using p5.js library.",
+      "es": "Experimentos y proyectos de programación creativa usando la librería p5.js."
+    },
+    "technologies": ["JavaScript", "p5.js"],
+    "featured": true,
+    "order": 4
+  }
+]

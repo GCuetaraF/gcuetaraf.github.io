@@ -1,0 +1,74 @@
+[
+  {
+    "company": "StoriMake",
+    "position": {
+      "en": "Application Developer",
+      "es": "Desarrollador de aplicaciones"
+    },
+    "type": {
+      "en": "Full-time",
+      "es": "Jornada completa"
+    },
+    "location": "Barcelona, Cataluña, España",
+    "remote": true,
+    "startDate": "2023-10",
+    "endDate": null,
+    "duration": {
+      "en": "2 years 8 months",
+      "es": "2 años 8 meses"
+    },
+    "technologies": ["Next.js", "React Native", "Tailwind CSS", "TypeScript", "React.js", "Node.js", "Express.js"],
+    "description": {
+      "en": "Developing full-stack applications with modern technologies, focusing on React Native mobile apps and Next.js web applications.",
+      "es": "Desarrollo de aplicaciones full-stack con tecnologías modernas, enfocado en aplicaciones móviles con React Native y aplicaciones web con Next.js."
+    }
+  },
+  {
+    "company": "Plexus Tech",
+    "position": {
+      "en": "Application Developer",
+      "es": "Desarrollador de aplicaciones"
+    },
+    "type": {
+      "en": "Full-time",
+      "es": "Jornada completa"
+    },
+    "location": "España",
+    "remote": true,
+    "startDate": "2022-01",
+    "endDate": "2023-11",
+    "duration": {
+      "en": "1 year 11 months",
+      "es": "1 año 11 meses"
+    },
+    "technologies": ["React Native", "React.js"],
+    "description": {
+      "en": "Web and mobile application development using React and React Native, delivering scalable solutions for diverse clients.",
+      "es": "Desarrollo de aplicaciones web y móviles usando React y React Native, entregando soluciones escalables para diversos clientes."
+    }
+  },
+  {
+    "company": "Bexfy",
+    "position": {
+      "en": "Front-end Developer",
+      "es": "Desarrollador de front-end"
+    },
+    "type": {
+      "en": "Full-time",
+      "es": "Jornada completa"
+    },
+    "location": "Barcelona y alrededores",
+    "remote": false,
+    "startDate": "2019-06",
+    "endDate": "2022-01",
+    "duration": {
+      "en": "2 years 8 months",
+      "es": "2 años 8 meses"
+    },
+    "technologies": ["React Native", "Angular", "Adobe XD", "Apache Cordova", "React.js"],
+    "description": {
+      "en": "Front-end development for web and mobile applications, working with design teams and implementing user interfaces with Angular and React.",
+      "es": "Desarrollo front-end para aplicaciones web y móviles, trabajando con equipos de diseño e implementando interfaces de usuario con Angular y React."
+    }
+  }
+]

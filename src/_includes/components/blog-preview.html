@@ -1,0 +1,71 @@
+<!-- Recent Blog Posts Section -->
+<section class="blog-preview section" id="blog">
+  <div class="container">
+    <h2 class="blog-preview__title animate-on-scroll">
+      <span data-lang-en="{{ translations.en.blog.title }}" data-lang-es="{{ translations.es.blog.title }}">{{ translations.en.blog.title }}</span>
+    </h2>
+
+    <div class="blog-preview__grid">
+      {% for post in collections.blog | limit(3) %}
+        <article class="blog-card animate-on-scroll">
+          {% if post.data.thumb %}
+            <a href="{{ post.url }}" class="blog-card__image">
+              <img 
+            src="{{ post.data.thumb.base }}" 
+            alt="{{ post.data.title }}"
+            loading="lazy"
+          >
+            </a>
+          {% endif %}
+
+          <div class="blog-card__content">
+            <div class="blog-card__meta">
+              <time datetime="{{ post.date }}" class="blog-card__date">
+                <span lang="en" style="display: none;">{{ post.date | readableDate }}</span>
+                <span lang="es" style="display: none;">{{ post.date | readableDateEs }}</span>
+              </time>
+              <span class="blog-card__reading-time">
+                {{ post.templateContent | readingTime }}
+                <span data-lang-en="{{ translations.en.blog.readTime }}" data-lang-es="{{ translations.es.blog.readTime }}">{{ translations.en.blog.readTime }}</span>
+              </span>
+            </div>
+
+            <h3 class="blog-card__title">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h3>
+
+            {% if post.data.description %}
+              <p class="blog-card__excerpt">{{ post.data.description }}</p>
+            {% endif %}
+
+            {% if post.data.tags %}
+              <div class="blog-card__tags">
+                {% for tag in post.data.tags %}
+                  <span class="tech-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <a href="{{ post.url }}" class="blog-card__link">
+              <span data-lang-en="{{ translations.en.blog.readMore }}" data-lang-es="{{ translations.es.blog.readMore }}">{{ translations.en.blog.readMore }}</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+
+    <div class="blog-preview__cta animate-on-scroll">
+      <a href="/blog/" class="btn btn--secondary">
+        <span data-lang-en="{{ translations.en.blog.viewAll }}" data-lang-es="{{ translations.es.blog.viewAll }}">{{ translations.en.blog.viewAll }}</span>
+        <svg class="btn__icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M5 12h14"/>
+          <path d="m12 5 7 7-7 7"/>
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

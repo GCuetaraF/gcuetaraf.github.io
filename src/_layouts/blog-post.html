@@ -1,0 +1,57 @@
+---
+layout: base.html
+---
+
+<!DOCTYPE html>
+<html lang="{{ lang or 'en' }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - {{ site.name }}</title>
+    <link rel="stylesheet" href="/css/variables.css">
+    <link rel="stylesheet" href="/css/base.css">
+    <link rel="stylesheet" href="/css/blog.css">
+  </head>
+  <body>
+    <!-- Language Switcher -->
+    {% include "components/language-switcher.html" %}
+
+    <main class="blog-post">
+      <div class="container">
+        <article class="post">
+          <header class="post__header">
+            <a href="/" class="back-link">← Back to Home</a>
+
+            <h1 class="post__title">{{ title }}</h1>
+
+            <div class="post__meta">
+              <time datetime="{{ date }}" class="post__date">
+                {{ date | readableDate }}
+              </time>
+              <span class="post__reading-time">
+                {{ content | readingTime }} min read
+            </span>
+              {% if tags %}
+                <div class="post__tags">
+                  {% for tag in tags %}
+                    <span class="tech-tag">{{ tag }}</span>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          </header>
+
+          <div class="post__content">
+            {{ content | safe }}
+          </div>
+
+          <footer class="post__footer">
+            <a href="/blog/" class="btn btn--secondary">← View All Articles</a>
+          </footer>
+        </article>
+      </div>
+    </main>
+
+    <script src="/js/language.js"></script>
+  </body>
+</html>

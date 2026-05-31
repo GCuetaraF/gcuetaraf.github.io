@@ -1,0 +1,81 @@
+---
+layout: base.html
+title: Blog
+permalink: /blog/
+css:
+  - /css/variables.css
+  - /css/base.css
+  - /css/blog-listing.css
+---
+
+<main class="blog-listing">
+  <div class="container">
+    <header class="blog-listing__header">
+      <a href="/" class="back-link">← Back to Home</a>
+
+      <h1 class="blog-listing__title">
+        <span data-lang-en="Blog" data-lang-es="Blog">Blog</span>
+      </h1>
+      <p class="blog-listing__subtitle">
+        <span data-lang-en="Articles about web development, programming, and technology" data-lang-es="Artículos sobre desarrollo web, programación y tecnología">
+          Articles about web development, programming, and technology
+        </span>
+      </p>
+    </header>
+
+    <div class="blog-listing__grid">
+      {% for post in collections.blog %}
+        <article class="blog-card">
+          {% if post.data.thumb %}
+            <a href="{{ post.url }}" class="blog-card__image">
+              <img 
+            src="{{ post.data.thumb.base }}" 
+            alt="{{ post.data.title }}"
+            loading="lazy"
+          >
+            </a>
+          {% endif %}
+
+          <div class="blog-card__content">
+            <div class="blog-card__meta">
+              <time datetime="{{ post.date }}" class="blog-card__date">
+                <span lang="en" style="display: none;">{{ post.date | readableDate }}</span>
+                <span lang="es" style="display: none;">{{ post.date | readableDateEs }}</span>
+              </time>
+              <span class="blog-card__reading-time">
+                {{ post.templateContent | readingTime }}
+                <span data-lang-en="min read" data-lang-es="min de lectura">min read</span>
+              </span>
+            </div>
+
+            <h2 class="blog-card__title">
+              <a href="{{ post.url }}">{{ post.data.title }}</a>
+            </h2>
+
+            {% if post.data.description %}
+              <p class="blog-card__excerpt">{{ post.data.description }}</p>
+            {% endif %}
+
+            {% if post.data.tags %}
+              <div class="blog-card__tags">
+                {% for tag in post.data.tags %}
+                  <span class="tech-tag">{{ tag }}</span>
+                {% endfor %}
+              </div>
+            {% endif %}
+
+            <a href="{{ post.url }}" class="blog-card__link">
+              <span data-lang-en="Read More" data-lang-es="Leer Más">Read More</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M5 12h14"/>
+                <path d="m12 5 7 7-7 7"/>
+              </svg>
+            </a>
+          </div>
+        </article>
+      {% endfor %}
+    </div>
+  </div>
+</main>
+
+<script src="/js/language.js"></script>

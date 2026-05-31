@@ -1,20 +1,23 @@
-<title>{{ title or metadata.title }}</title>
-<meta name="description" content="{{ description or metadata.description }}">
-<meta name="robots" content="index, follow">
-<meta name="generator" content="Eleventy">
-{% block head %}{% endblock %}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<meta property="og:locale" content="es_ES">
-<meta property="og:site_name" content="{{ metadata.title }}">
-<meta property="og:type" content="{{ ogtype or 'website' }}">
-<meta property="og:url" content="{{ metadata.url }}{{ page.url }}">
+<title>{{ title or site.name }} - {{ site.title }}</title>
+<meta name="description" content="{{ description or site.description }}">
+<meta name="author" content="{{ site.author.name }}">
 
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="{{ title or metadata.title }}">
-<meta name="twitter:description" content="{{ description or metadata.description }}">
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="{{ site.url }}{{ page.url }}">
+<meta property="og:title" content="{{ title or site.name }}">
+<meta property="og:description" content="{{ description or site.description }}">
+<meta property="og:site_name" content="{{ site.name }}">
 
-<link rel="apple-touch-icon" sizes="100x100" href="/assets/images/cap-light.ico">
-<link rel="shortcut icon" href="/assets/images/cap-light.ico" type="image/x-icon"
-    media="(prefers-color-scheme: light)">
-<link rel="shortcut icon" href="/assets/images/cap-dark.ico" type="image/x-icon"
-    media="(prefers-color-scheme: dark)">
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image">
+<meta property="twitter:url" content="{{ site.url }}{{ page.url }}">
+<meta property="twitter:title" content="{{ title or site.name }}">
+<meta property="twitter:description" content="{{ description or site.description }}">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
