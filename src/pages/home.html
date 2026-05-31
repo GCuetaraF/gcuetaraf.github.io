@@ -2,16 +2,95 @@
 description: Lorem ipsum.
 permalink: /
 layout: base.html
+css:
+  - /css/home.css
 ---
 
+{% import "components/experience-article.html" as exp %}
+{% import "components/svg/star-icon.html" as star %}
+
 {% block content %}
-	<main>
-		<section>
-			<h1>Lorem.</h1>
-		</section>
-		<section></section>
-		<section></section>
-		<section></section>
-		<section></section>
-	</main>
+  {% include "components/hero.html" %}
+
+  <main>
+    <section id="experience">
+      {% include "components/intro-section.html" %}
+
+      {% call exp.article("storimake", "2023", "2026", "https://storimake.com/business_portal", "Go to Storimake's website", "Storimake") %}
+      <img src="/assets/images/experience-img-1.gif" class="experience-img experience-img-1" alt="">
+      <p>A patform for brands and clients to connect with freelances to produce high-quality video & photo content.</p>
+
+      <ul>
+        <li>
+          {{ star.icon("-15deg") }}
+          <span>NextJS frontend for content creation and management</span>
+        </li>
+        <li>
+          {{ star.icon("-50deg") }}
+          <span>React Native mobile app for capture and publishing workflows</span>
+        </li>
+        <li>
+          {{ star.icon("15deg") }}
+
+          <span>NodeJS Express APIs for media handling and delivery</span>
+        </li>
+      </ul>
+      {% endcall %}
+
+      {% call exp.article("plexus", "2022", "2023", "https://www.plexus.es/", "Go to Plexus Tech's website", "Plexus Tech") %}
+      <img src="/assets/images/experience-img-2.gif" class="experience-img experience-img-2" alt="">
+      <p>
+        Frontend development for digital service platforms and campaign management tools. Focused on scalable UI
+        systems, performance, and API integration.
+      </p>
+      <p>Built production features in collaboration with design and backend teams under fast release cycles.</p>
+
+      <ul>
+        <li>
+          {{ star.icon("-30deg") }}
+          <span>NextJS web applications for client platforms.</span>
+        </li>
+        <li>
+          {{ star.icon("33deg") }}
+          <span>React component systems for reusable UI patterns</span>
+        </li>
+        <li>
+          {{ star.icon("-33deg") }}
+          <span>React Native modules for mobile workflows</span>
+        </li>
+      </ul>
+      {% endcall %}
+
+      {% call exp.article("bexfy", "2019", "2022", "https://web.archive.org/web/20180915032701/http://bexfy.com/empresa/", "Go to Bexfy's Website on the Wayback Machine", "Bexfy") %}
+      <img src="/assets/images/experience-img-3.gif" class="experience-img experience-img-3" alt="">
+      <p>
+        Retail media platform that automates in-store multimedia delivery across audio, video, and scent devices from a
+        unified control system.
+      </p>
+      <p>Led front-end architecture, API integration, and UI system design.</p>
+
+      <ul>
+        <li>
+          {{ star.icon("10deg") }}
+          <span>Cordova device app for synchronized audio, video, and scent playback across retail locations</span></li>
+        <li>
+          {{ star.icon("30deg") }}
+          <span>Angular admin dashboard for managing brands, campaigns, and store networks.</span></li>
+        <li>
+          {{ star.icon("-30deg") }}
+          <span>React Native app for store managers to monitor and control deployed devices</span></li>
+      </ul>
+      {% endcall %}
+    </section>
+
+    {% include "components/svg/wavy-divider.html" %}
+
+    {% include "components/about-section.html" %}
+
+    {% include "components/svg/scallop-divider.html" %}
+
+    {% include "components/skills-section.html" %}
+
+    {% include "components/footer.html" %}
+  </main>
 {% endblock content %}

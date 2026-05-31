@@ -1,0 +1,28 @@
+@import "./lib/fonts.openprops.css";
+@import "./lib/sizes.openprops.css";
+@import "./lib/borders.openprops.css";
+@import "./lib/colors.openprops.css";
+
+:root {
+  --font-pacifico: "Pacifico", var(--font-handwritten);
+  --font-exo: "Exo", var(--font-monospace-code);
+  --font-gochi: "Gochi Hand", var(--font-handwritten);
+
+  --font-family-site-title: var(--font-pacifico);
+  --font-family-accent: var(--font-gochi);
+}
+
+@font-face {
+  font-family: Pacifico;
+  src: url("/assets/fonts/Pacifico-Regular.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: Exo;
+  src: url("/assets/fonts/Exo-VariableFont_wght.ttf") format("truetype");
+}
+
+@font-face {
+  font-family: "Gochi Hand";
+  src: url("/assets/fonts/GochiHand-Regular.ttf") format("truetype");
+}
