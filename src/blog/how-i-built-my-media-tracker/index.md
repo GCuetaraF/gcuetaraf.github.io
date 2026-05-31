@@ -3,6 +3,8 @@ title: How I built my media tracker
 date: 2026-02-22
 tags: ["web-dev", "media"]
 description: In order to manage all the media I interact with, I created a managed system which tracks and stores the information in an external database that I can later consume in any of my applications.
+thumb:
+  base: https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&h=450&fit=crop
 ---
 
 Ever since I created this website, I’ve kept a few pages dedicated to tracking the media I consume. At first it was simple: a few handcrafted JSON files, manually updated, rendered through Eleventy.
@@ -19,13 +21,12 @@ This post is about extracting that logic into a small tracking service with its 
 
 ## The Problem With the Initial Approach
 
-
 The previous system had two structural weaknesses.
 
 1. **Everything lived inside the website**. All fetching logic was embedded in the static site project. That meant:
-    - Deploying the site triggered full data synchronization.
-    - The tracker couldn’t exist independently.
-    - Reuse in another application would require extraction anyway.
+   - Deploying the site triggered full data synchronization.
+   - The tracker couldn’t exist independently.
+   - Reuse in another application would require extraction anyway.
 
 2. **There was no persistence**. Every build re-fetched everything. If an API failed or returned malformed data, the broken result became the new truth immediately. There was no memory of previous state or protection against transient failures. That approach scales poorly once the data becomes meaningful.
 
@@ -56,7 +57,6 @@ At a high level, the tracker now fetches from external APIs → normalizes their
 The website is now just one consumer and not the be-all-end-all of media syncronization. That shift alone simplified everything and .
 
 ## Architectural Shape
-
 
 The system follows a layered flow:
 
@@ -113,7 +113,7 @@ Currently the tracker supports games through RetroAchievements and Steam. Let’
 
 <aside style="--span:3">
 
-  [RetroAchievements](https://retroachievements.org/) is a community-driven system to earn achievements in classic games. In this way, you can keep track of stuff like play time and completion percentage while retro gaming.
+[RetroAchievements](https://retroachievements.org/) is a community-driven system to earn achievements in classic games. In this way, you can keep track of stuff like play time and completion percentage while retro gaming.
 
 </aside>
 
@@ -121,7 +121,7 @@ Currently the tracker supports games through RetroAchievements and Steam. Let’
 
 The client layer is intentionally straightforward:
 
-```ts#6 title="RetroachievementsClient.ts"
+```ts
 async fetchGameProgress(): Promise<RetroachievementsGameProgress[]> {
   const url = "https://retroachievements.org/API/API_GetUserCompletionProgress.php";
 

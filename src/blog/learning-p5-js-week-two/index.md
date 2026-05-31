@@ -4,6 +4,8 @@ lang: en
 date: 2025-10-11
 tags: ["creative-coding", "learning"]
 description: "Week two of p5.js experiments: implementing the marching squares algorithm in JavaScript to generate procedural worlds from simple values."
+thumb:
+  base: https://images.unsplash.com/photo-1635070041078-e363dbe005cb?w=800&h=450&fit=crop
 ---
 
 This week's experiment dives into the **marching squares** algorithm, following [this video](https://www.youtube.com/watch?v=0ZONMNUKTfU) from [The Coding Train](https://thecodingtrain.com/).

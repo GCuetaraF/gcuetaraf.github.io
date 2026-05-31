@@ -7,7 +7,7 @@
 
     <div class="projects__grid">
       {% for project in projects %}
-        <div class="project-card animate-on-scroll">
+        <div id="project-{{ project.name }}" class="project-card animate-on-scroll">
           <div class="project-card__content">
             <h3 class="project-card__name">{{ project.name }}</h3>
             <p class="project-card__description">

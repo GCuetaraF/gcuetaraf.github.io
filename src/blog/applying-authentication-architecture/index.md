@@ -4,6 +4,8 @@ lang: en
 date: 2025-09-13
 tags: ["web-dev"]
 description: To scale user access permissions based on role and attribute, we implemented ABAC permissions into our front-end application.
+thumb:
+  base: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop
 ---
 
 Every app with authentication eventually needs to tackle authorization. In our case, once our product grew from a small experiment into a mid-sized application, it became clear we needed a proper model to keep users from doing things they shouldn't.

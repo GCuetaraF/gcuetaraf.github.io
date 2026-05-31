@@ -11,19 +11,18 @@
     "hero": {
       "greeting": "Hi, I'm",
       "tagline": "Software developer | Web enthusiast",
-      "about": "I work as a full-time web developer in both client-facing and management applications. I specialize in the <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\">back-of-the-front-end</a> designing client architecture, integrating third-party APIs, managing business logic and working with both designers and backend developers to ensure product quality.",
+      "about": "I work as a full-time web developer in both client-facing and management applications. I specialize in the <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\" target=\"_blank\">back-of-the-front-end</a> designing client architecture, integrating third-party APIs, managing business logic and working with both designers and backend developers to ensure product quality.",
       "cta": {
         "projects": "View Projects",
         "cv": "Download CV"
       }
     },
     "about": {
-      "title": "About Me",
-      "subtitle": "What I Do",
+      "title": "What I Do",
+      "description": "I build modern web applications with a focus on clean architecture, seamless integrations, and exceptional user experiences. From designing scalable frontend systems to implementing robust backend solutions, I bring ideas to life through code.",
       "skills": {
         "frontend": "Frontend Development",
         "backend": "Backend Development",
-        "mobile": "Mobile Apps",
         "uiux": "UI/UX Design"
       }
     },
@@ -70,15 +69,15 @@
     "hero": {
       "greeting": "Hola, soy",
       "tagline": "Desarrollador de software | Entusiasta web",
-      "about": "Trabajo como desarrollador web full-time en aplicaciones tanto de cara al cliente como de gestión. Me especializo en el <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\">back-of-the-front-end</a> diseñando arquitectura de cliente, integrando APIs de terceros, gestionando lógica de negocio y trabajando tanto con diseñadores como con desarrolladores backend para asegurar la calidad del producto.",
+      "about": "Trabajo como desarrollador web full-time en aplicaciones tanto de cara al cliente como de gestión. Me especializo en el <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\" target=\"_blank\">back-of-the-front-end</a> diseñando arquitectura de cliente, integrando APIs de terceros, gestionando lógica de negocio y trabajando tanto con diseñadores como con desarrolladores backend para asegurar la calidad del producto.",
       "cta": {
         "projects": "Ver Proyectos",
         "cv": "Descargar CV"
       }
     },
     "about": {
-      "title": "Sobre mí",
-      "subtitle": "Lo que hago",
+      "title": "Lo que hago",
+      "description": "Construyo aplicaciones web modernas con un enfoque en arquitectura limpia, integraciones fluidas y experiencias de usuario excepcionales. Desde diseñar sistemas frontend escalables hasta implementar soluciones backend robustas, doy vida a ideas a través del código.",
       "skills": {
         "frontend": "Desarrollo Frontend",
         "backend": "Desarrollo Backend",

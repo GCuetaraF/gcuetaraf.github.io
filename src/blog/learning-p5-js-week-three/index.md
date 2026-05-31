@@ -4,6 +4,8 @@ lang: en
 date: 2025-10-26
 description: "Week three of learning p5.js: implementing the Wave Function Collapse algorithm in JavaScript to generate procedural patterns and explore constraint-based systems."
 tags: ["creative-coding", "learning"]
+thumb:
+  base: https://images.unsplash.com/photo-1618005198919-d3d4b5a92ead?w=800&h=450&fit=crop
 ---
 
 After a short break, this week I’m exploring the **Wave Function Collapse** algorithm, following [this video](https://www.youtube.com/watch?v=rI_y2GAlQFM) by [The Coding Train](https://thecodingtrain.com/).

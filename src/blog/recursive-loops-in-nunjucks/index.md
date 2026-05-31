@@ -3,9 +3,11 @@ title: Recursive Loops in Nunjucks
 date: 2024-10-20
 tags: ["web-dev", "nunjucks"]
 description: Learn to recursively generate HTML markup with Nunjucks using a static JSON file.
+thumb:
+  base: https://images.unsplash.com/photo-1542831371-29b0f74f9713?w=800&h=450&fit=crop
 ---
 
-While re-writing my [Quizzes page](/quizzes) so it's easier to manage, I decided I wanted to separate the HTML markup from the raw data. The problem came when I realized that I needed to recursively generate the HTML so it was made up of nested lists with links.
+While re-writing my blog I decided I wanted to separate the HTML markup from the raw data. The problem came when I realized that I needed to recursively generate the HTML so it was made up of nested lists with links.
 
 Thankfully I found a [Github issue](https://github.com/mozilla/nunjucks/issues/416) from someone with the same problem as me. In the issue, there was a [response from jbmoelker](https://github.com/mozilla/nunjucks/issues/416#issuecomment-206335032) in which they solved the problem with a macro.
 

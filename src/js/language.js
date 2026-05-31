@@ -39,6 +39,20 @@ function updateLanguage(lang) {
   });
 }
 
+// Update language with view transition
+function updateLanguageWithTransition(lang) {
+  // Check if View Transitions API is supported
+  if (!document.startViewTransition) {
+    updateLanguage(lang);
+    return;
+  }
+
+  // Start view transition
+  document.startViewTransition(() => {
+    updateLanguage(lang);
+  });
+}
+
 // Initialize language on page load
 updateLanguage(currentLang);
 
@@ -50,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
     languageSwitcher.addEventListener("click", (e) => {
       if (e.target.classList.contains("lang-btn")) {
         const newLang = e.target.dataset.lang;
-        updateLanguage(newLang);
+        updateLanguageWithTransition(newLang);
       }
     });
   }

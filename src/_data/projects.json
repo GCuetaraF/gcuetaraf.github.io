@@ -1,16 +1,5 @@
 [
   {
-    "name": "personal-media-tracker",
-    "url": "https://github.com/kulugary/personal-media-tracker",
-    "description": {
-      "en": "A personal media tracking application for managing movies, series, and books.",
-      "es": "Una aplicación personal para el seguimiento de películas, series y libros."
-    },
-    "technologies": ["React", "Node.js", "Express"],
-    "featured": true,
-    "order": 1
-  },
-  {
     "name": "rp-sheet-front",
     "url": "https://github.com/kulugary/rp-sheet-front",
     "description": {
@@ -22,15 +11,15 @@
     "order": 2
   },
   {
-    "name": "eg-lierno-app",
-    "url": "https://github.com/kulugary/eg-lierno-app",
+    "name": "personal-media-tracker",
+    "url": "https://github.com/kulugary/personal-media-tracker",
     "description": {
-      "en": "Campaign management application for tabletop RPG games.",
-      "es": "Aplicación de gestión de campañas para juegos de rol de mesa."
+      "en": "A personal media tracking application for managing movies, series, and books.",
+      "es": "Una aplicación personal para el seguimiento de películas, series y libros."
     },
-    "technologies": ["React", "Node.js"],
+    "technologies": ["React", "Node.js", "Express"],
     "featured": true,
-    "order": 3
+    "order": 1
   },
   {
     "name": "learning-p5.js",

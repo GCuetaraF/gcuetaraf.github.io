@@ -4,6 +4,8 @@ date: 2023-12-22
 lang: en
 tags: ["web-dev", "leaflet"]
 description: Embark on fantasy map creation with Leaflet JS. Learn hands-on from installation to customization, discovering how to harness the full power of this robust map library. With detailed instructions and practical examples, acquire the necessary tools to transform your ideas into interactive maps.
+thumb:
+  base: https://images.unsplash.com/photo-1524661135-423995f22d0b?w=800&h=450&fit=crop
 ---
 
 We've all seen it: When you buy a new book from any fantasy series -be it [The Lord of the Rings](https://en.wikipedia.org/wiki/The_Lord_of_the_Rings) or [The Witcher](https://en.wikipedia.org/wiki/The_Witcher) -, it oftens includes a detailed map to allow you to immerse yourself in the world and its locations.
@@ -22,7 +24,7 @@ As it is with most technology dilemmas, there's not a single solution to this pr
 
 Before you can add interactivity with [Leaflet](https://leafletjs.com/) and publish it to your website, you need to generate your map. There's tons of options available for your: you may choose to pick up pen and paper, paint it digitally in your software of choice, ...
 
-[![How to download a map from Azhaar's](/assets/images/blog/2023-12-22-leaflet-for-fantasy-maps/screenshot1.gif "How to download a map from Azhaar's"){.float-left}](/assets/images/blog/2023-12-22-leaflet-for-fantasy-maps/screenshot1.gif)
+[![How to download a map from Azhaar's](/assets/images/blog/2023-12-22-leaflet-for-fantasy-maps/screenshot1.gif "How to download a map from Azhaar's")](/assets/images/blog/2023-12-22-leaflet-for-fantasy-maps/screenshot1.gif)
 
 However, if all other choise is out of your reach, because you lack the skill or time to make them from scratch, there's some alternatives I can recommend. You can't bring up interactive fantasy maps without mentioning [Azgaar's Fantasy Map Generator](https://azgaar.github.io/Fantasy-Map-Generator/). The raw amount of choice of configuration and customization it offers makes it explaining the software way out of this article's scope, but I can send you to its [subreddit](https://www.reddit.com/r/FantasyMapGenerator/) where you may find information and ask any questions.
 

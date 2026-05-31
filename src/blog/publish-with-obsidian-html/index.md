@@ -6,6 +6,8 @@ tags: ["web-dev", "obsidian"]
 image: /assets/images/blog/2024-02-11-publish-with-obsidian-html/header.png
 imageAlt: Publish your notes with ObsidianHTML
 description: Thanks to the ObsidianHTML package, you can share your notes online.
+thumb:
+  base: https://images.unsplash.com/photo-1455390582262-044cdead277a?w=800&h=450&fit=crop
 ---
 
 ![Publish your notes with ObsidianHTML](/assets/images/blog/2024-02-11-publish-with-obsidian-html/header.png "Publish your notes with ObsidianHTML")

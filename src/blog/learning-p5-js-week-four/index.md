@@ -4,6 +4,8 @@ lang: en
 date: 2025-11-01
 description: "Week four of p5.js sketches: Implementing the Hilbert curve algorithm to draw the classic infinite space-filling curve."
 tags: ["creative-coding", "learning"]
+thumb:
+  base: https://images.unsplash.com/photo-1509228468518-180dd4864904?w=800&h=450&fit=crop
 ---
 
 In this week's experiment I'll be diving into the **Hilbert curve** algorithm following along this video from [The Coding Train](https://thecodingtrain.com/).

@@ -30,8 +30,24 @@ document.addEventListener("click", (e) => {
     if (element) {
       element.scrollIntoView({
         behavior: "smooth",
-        block: "start",
+        block: "center",
       });
+
+      // Apply highlight effect if it's a project card
+      if (element.classList.contains("project-card")) {
+        // Remove any existing highlights
+        document.querySelectorAll(".project-card.highlight").forEach((card) => {
+          card.classList.remove("highlight");
+        });
+
+        // Add highlight class
+        element.classList.add("highlight");
+
+        // Remove highlight after 2 seconds
+        setTimeout(() => {
+          element.classList.remove("highlight");
+        }, 2000);
+      }
     }
   }
 });

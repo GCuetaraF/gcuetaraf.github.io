@@ -4,6 +4,8 @@ lang: en
 date: 2025-10-04
 tags: ["creative-coding", "learning"]
 description: "Week one of p5.js experiments: a digital take on paper marbling, where geometry and color mix into flowing, unpredictable patterns."
+thumb:
+  base: https://images.unsplash.com/photo-1579783902614-a3fb3927b6a5?w=800&h=450&fit=crop
 ---
 
 This week starts my first experiment with [p5.js](https://p5js.org/). The subject for today is the paper marbling algorithm, based in the implementation explained in [this video](https://www.youtube.com/watch?v=p7IGZTjC008) by [The Coding Train](https://thecodingtrain.com/).

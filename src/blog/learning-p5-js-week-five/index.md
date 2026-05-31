@@ -4,6 +4,8 @@ lang: en
 date: 2025-11-08
 description: "Week five of p5.js sketches: This time I try to implement Worley Noise, a different approach to OpenSimplex Noise, the one I used for Marching Squares."
 tags: ["creative-coding", "learning"]
+thumb:
+  base: https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop
 ---
 
 This time I'll be sketching the **Worley Noise** algorithm following [this implementation](https://www.youtube.com/watch?v=4066MndcyCk) by [The Coding Train](https://thecodingtrain.com/).
