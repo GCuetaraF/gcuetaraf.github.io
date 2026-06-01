@@ -17,10 +17,18 @@
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
     },
-    "technologies": ["Next.js", "React Native", "Tailwind CSS", "TypeScript", "React.js", "Node.js", "Express.js"],
+    "technologies": [
+      "Next.js",
+      "React Native",
+      "Tailwind CSS",
+      "TypeScript",
+      "React.js",
+      "Node.js",
+      "Express.js"
+    ],
     "description": {
-      "en": "Developing full-stack applications with modern technologies, focusing on React Native mobile apps and Next.js web applications.",
-      "es": "Desarrollo de aplicaciones full-stack con tecnologías modernas, enfocado en aplicaciones móviles con React Native y aplicaciones web con Next.js."
+      "en": "Developing a platform to automatize content creation with a modular team of freelancers specialized in creative work.",
+      "es": "Implementación de una plataforma para agilizar la producción de contenido con un equipo modular de freelancers especialistas en trabajo creativo."
     }
   },
   {
@@ -41,7 +49,10 @@
       "en": "1 year 11 months",
       "es": "1 año 11 meses"
     },
-    "technologies": ["React Native", "React.js"],
+    "technologies": [
+      "React Native",
+      "React.js"
+    ],
     "description": {
       "en": "Web and mobile application development using React and React Native, delivering scalable solutions for diverse clients.",
       "es": "Desarrollo de aplicaciones web y móviles usando React y React Native, entregando soluciones escalables para diversos clientes."
@@ -65,10 +76,16 @@
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
     },
-    "technologies": ["React Native", "Angular", "Adobe XD", "Apache Cordova", "React.js"],
+    "technologies": [
+      "React Native",
+      "Angular",
+      "Adobe XD",
+      "Apache Cordova",
+      "React.js"
+    ],
     "description": {
-      "en": "Front-end development for web and mobile applications, working with design teams and implementing user interfaces with Angular and React.",
-      "es": "Desarrollo front-end para aplicaciones web y móviles, trabajando con equipos de diseño e implementando interfaces de usuario con Angular y React."
+      "en": "Developing a platform for retailers to automate multimedia content across points of sale; including playback of audio, video and scent diffusion.",
+      "es": "Desarrollo de una plataforma para que los retailers automaticen contenido multimedia en diferentes puntos de venta; incluyendo reproducción de audio, vídeo y difusión de perfumes."
     }
   }
 ]

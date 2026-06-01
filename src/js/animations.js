@@ -1,4 +1,3 @@
-// Scroll animations using Intersection Observer
 const observerOptions = {
   threshold: 0.1,
   rootMargin: "0px 0px -50px 0px",
@@ -13,14 +12,12 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, observerOptions);
 
-// Observe all elements with animate-on-scroll class
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll(".animate-on-scroll").forEach((el) => {
     observer.observe(el);
   });
 });
 
-// Smooth scroll for anchor links
 document.addEventListener("click", (e) => {
   const target = e.target.closest('a[href^="#"]');
   if (target) {
@@ -33,17 +30,13 @@ document.addEventListener("click", (e) => {
         block: "center",
       });
 
-      // Apply highlight effect if it's a project card
       if (element.classList.contains("project-card")) {
-        // Remove any existing highlights
         document.querySelectorAll(".project-card.highlight").forEach((card) => {
           card.classList.remove("highlight");
         });
 
-        // Add highlight class
         element.classList.add("highlight");
 
-        // Remove highlight after 2 seconds
         setTimeout(() => {
           element.classList.remove("highlight");
         }, 2000);

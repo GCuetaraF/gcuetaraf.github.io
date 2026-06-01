@@ -1,12 +1,3 @@
-/* ============================================
-   HOME PAGE STYLES
-   ============================================ */
-
-/* ============================================
-   UTILITY CLASSES
-   ============================================ */
-
-/* Reusable card base */
 .card {
   background: var(--color-surface-2);
   border: 1px solid var(--color-surface-3);
@@ -33,7 +24,6 @@
   box-shadow: 0 16px 32px rgba(0, 0, 0, 0.3);
 }
 
-/* Section container positioning */
 .section {
   position: relative;
   overflow: visible;
@@ -44,7 +34,6 @@
   z-index: 2;
 }
 
-/* Tag/badge styles */
 .tag {
   padding: 0.25rem 0.75rem;
   background: var(--color-surface-3);
@@ -57,7 +46,6 @@
   background: var(--color-surface-2);
 }
 
-/* Icon sizing */
 .icon--sm {
   width: 14px;
   height: 14px;
@@ -78,11 +66,6 @@
   height: 48px;
 }
 
-/* ============================================
-   WAVY SECTION DIVIDERS
-   Smooth, flowing waves with subtle variations
-   ============================================ */
-
 .wave-divider {
   position: relative;
   width: 100%;
@@ -97,7 +80,6 @@
   height: 60px;
 }
 
-/* Wave 1 - Subtle gentle curve */
 .wave-divider--1 {
   background: var(--color-surface-1);
 }
@@ -110,7 +92,6 @@
   fill: var(--color-surface-0);
 }
 
-/* Wave 2 - Medium flowing wave */
 .wave-divider--2 {
   background: var(--color-surface-0);
 }
@@ -123,7 +104,6 @@
   fill: var(--color-surface-1);
 }
 
-/* Wave 3 - Gentle curve down to Projects */
 .wave-divider--3 {
   background: var(--color-surface-0);
 }
@@ -136,7 +116,6 @@
   fill: var(--color-surface-1);
 }
 
-/* Wave 4 - Gentle curve down from Projects */
 .wave-divider--4 {
   background: var(--color-surface-0);
 }
@@ -149,7 +128,6 @@
   fill: var(--color-surface-1);
 }
 
-/* Wave 5 - Asymmetric flowing wave */
 .wave-divider--5 {
   background: var(--color-surface-0);
 }
@@ -162,7 +140,6 @@
   fill: var(--color-surface-1);
 }
 
-/* Link button styles */
 .link-btn {
   display: inline-flex;
   align-items: center;
@@ -184,7 +161,6 @@
   background: rgba(16, 185, 129, 0.1);
 }
 
-/* Metadata flex layout */
 .meta-list {
   display: flex;
   flex-wrap: wrap;
@@ -205,7 +181,6 @@
   gap: 0.5rem;
 }
 
-/* Language Switcher */
 .language-switcher {
   position: fixed;
   top: 2rem;
@@ -238,10 +213,6 @@
   background: var(--gradient-primary);
   color: white;
 }
-
-/* ============================================
-   HERO SECTION
-   ============================================ */
 
 .hero {
   min-height: 100vh;
@@ -346,10 +317,6 @@
   }
 }
 
-/* ============================================
-   BUTTONS
-   ============================================ */
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -396,10 +363,6 @@
   height: 18px;
 }
 
-/* ============================================
-   SOCIAL LINKS
-   ============================================ */
-
 .social-link {
   display: flex;
   align-items: center;
@@ -423,10 +386,6 @@
   width: 24px;
   height: 24px;
 }
-
-/* ============================================
-   ABOUT SECTION
-   ============================================ */
 
 .about {
   background: var(--color-surface-1);
@@ -458,7 +417,6 @@
   margin-top: 3rem;
 }
 
-/* Apply card utilities */
 .skill-card,
 .job-card,
 .project-card,
@@ -526,7 +484,6 @@
   color: var(--color-text-primary);
 }
 
-/* Apply tag utility to tech/tag elements */
 .skill-card__tech,
 .job-card__tech,
 .project-card__tech,
@@ -550,10 +507,6 @@
   font-size: var(--font-size-sm);
   color: var(--color-text-secondary);
 }
-
-/* ============================================
-   EXPERIENCE SECTION
-   ============================================ */
 
 .experience {
   background: var(--color-surface-0);
@@ -651,10 +604,6 @@
   color: var(--color-text-secondary);
 }
 
-/* ============================================
-   PROJECTS SECTION
-   ============================================ */
-
 .projects {
   background: var(--color-surface-1);
   padding-block: 6rem 5rem;
@@ -698,7 +647,6 @@
   margin-bottom: 1rem;
 }
 
-/* Apply link-btn utility to project/copy buttons */
 .project-link,
 .copy-btn {
   display: inline-flex;
@@ -738,10 +686,6 @@
 .projects__cta {
   text-align: center;
 }
-
-/* ============================================
-   BLOG PREVIEW SECTION
-   ============================================ */
 
 .blog-preview {
   background: var(--color-surface-0);
@@ -854,10 +798,6 @@
   text-align: center;
 }
 
-/* ============================================
-   CONTACT SECTION
-   ============================================ */
-
 .contact {
   background: var(--color-surface-1);
   padding-block: 6rem 5rem;
@@ -938,10 +878,6 @@
   gap: 1.5rem;
 }
 
-/* ============================================
-   FOOTER
-   ============================================ */
-
 .footer {
   background: var(--color-surface-0);
   padding: 3rem 0;
@@ -962,10 +898,6 @@
   color: var(--color-text-muted);
   margin-bottom: 0;
 }
-
-/* ============================================
-   RESPONSIVE
-   ============================================ */
 
 @media (max-width: 768px) {
   .language-switcher {

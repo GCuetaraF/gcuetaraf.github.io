@@ -12,14 +12,12 @@ layout: base.html
     <link rel="stylesheet" href="/css/base.css">
     <link rel="stylesheet" href="/css/blog.css">
 
-    <!-- Prism.js Syntax Highlighting -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.css">
     <link rel="stylesheet" href="/css/prism-custom.css">
   </head>
   <body>
-    <!-- Language Switcher -->
     {% include "components/language-switcher.html" %}
 
     <main class="blog-post">
@@ -60,7 +58,6 @@ layout: base.html
 
     <script src="/js/language.js"></script>
 
-    <!-- Prism.js Core and Languages -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-typescript.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-javascript.min.js"></script>
@@ -73,13 +70,11 @@ layout: base.html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-yaml.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js"></script>
 
-    <!-- Prism.js Plugins -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js"></script>
 
-    <!-- Initialize Prism with line numbers -->
     <script>
       // Add line-numbers class to all code blocks and handle metadata
       document.addEventListener('DOMContentLoaded', function () {

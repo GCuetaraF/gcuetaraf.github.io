@@ -39,14 +39,6 @@
               <div class="job-card__details">
                 <p class="job-card__location">{{ job.location }}</p>
                 <p class="job-card__duration">
-                  <span class="job-card__dates">
-                    {{ job.startDate }} - 
-                  {% if job.endDate %}
-                      {{ job.endDate }}
-                    {% else %}
-                      <span data-lang-en="{{ translations.en.experience.present }}" data-lang-es="{{ translations.es.experience.present }}">{{ translations.en.experience.present }}</span>
-                    {% endif %}
-                  </span>
                   <span class="job-card__duration-text">
                     <span data-lang-en="{{ job.duration.en }}" data-lang-es="{{ job.duration.es }}">{{ job.duration.en }}</span>
                   </span>

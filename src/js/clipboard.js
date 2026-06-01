@@ -1,16 +1,13 @@
-// Copy to clipboard functionality
 function copyToClipboard(text, button) {
   navigator.clipboard
     .writeText(text)
     .then(() => {
-      // Show success feedback
       const originalText = button.textContent;
       const originalHTML = button.innerHTML;
 
       button.innerHTML = '<span data-lang-en="Copied!" data-lang-es="¡Copiado!">Copied!</span>';
       button.classList.add("copied");
 
-      // Get current language
       const lang = document.documentElement.getAttribute("lang") || "en";
       const copiedText = lang === "es" ? "¡Copiado!" : "Copied!";
       button.querySelector("span").textContent = copiedText;
@@ -25,7 +22,6 @@ function copyToClipboard(text, button) {
     });
 }
 
-// Initialize copy buttons
 document.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll("[data-copy]").forEach((button) => {
     button.addEventListener("click", () => {
