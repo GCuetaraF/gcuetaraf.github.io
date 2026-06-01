@@ -6,9 +6,12 @@
   "author": {
     "name": "Gabriel Cuétara",
     "email": "garycuetara@gmail.com",
-    "github": "https://github.com/kulugary",
+    "github": "https://github.com/gcuetaraf",
     "linkedin": "https://www.linkedin.com/in/gabrielcuetara"
   },
   "defaultLanguage": "en",
-  "supportedLanguages": ["en", "es"]
+  "supportedLanguages": [
+    "en",
+    "es"
+  ]
 }

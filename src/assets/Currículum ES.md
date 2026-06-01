@@ -1,6 +1,6 @@
 # Gabriel Cuétara Flores
 
-garycuetara@gmail.com | linkedin.com/in/gabrielcuetara | github.com/gcuetara
+garycuetara@gmail.com | linkedin.com/in/gabrielcuetara | github.com/gcuetaraf
 
 Desarrollador full-stack especializado en React, TypeScript, Next.js y arquitecturas frontend escalables. Experiencia construyendo design systems, integrando servicios de terceros y colaborando con equipos multidisciplinares en entornos de alto crecimiento.
 

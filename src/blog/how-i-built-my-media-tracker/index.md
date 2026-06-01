@@ -11,7 +11,7 @@ Ever since I created this website, I’ve kept a few pages dedicated to tracking
 
 <aside style="--span:4">
 
-The project’s full source code lives in its [GitHub repository](https://github.com/KuluGary/personal-media-tracker). If anything sparks questions, [feel free to reach out](/contact).
+The project’s full source code lives in its [GitHub repository](https://github.com/gcuetaraf/personal-media-tracker). If anything sparks questions, [feel free to reach out](/contact).
 
 </aside>
 
@@ -263,4 +263,4 @@ More importantly, it became a consumer-agnostic system I can repurpose in the fu
 
 The way this system is set-up makes including new third-party providers and data types trivial. In the near future I can add more than videogames, such as integrations with music providers, book trackers, video on-demand platforms, etc.
 
-I hope this overview has been interesting, if not useful. Remember that you can read the full source code at its [GitHub repository](https://github.com/KuluGary/personal-media-tracker).
+I hope this overview has been interesting, if not useful. Remember that you can read the full source code at its [GitHub repository](https://github.com/gcuetaraf/personal-media-tracker).
