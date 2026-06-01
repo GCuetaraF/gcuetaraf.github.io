@@ -201,22 +201,22 @@ async function generateCV(inputPath, outputPathPDF, title) {
     // Launch Puppeteer and generate PDF
     const browser = await puppeteer.launch({
       headless: true,
-      args: ['--no-sandbox', '--disable-setuid-sandbox']
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
-    
+
     const page = await browser.newPage();
-    await page.setContent(html, { waitUntil: 'networkidle0' });
-    
+    await page.setContent(html, { waitUntil: "networkidle0" });
+
     await page.pdf({
       path: outputPathPDF,
-      format: 'A4',
+      format: "A4",
       printBackground: true,
       margin: {
-        top: '0mm',
-        right: '0mm',
-        bottom: '0mm',
-        left: '0mm'
-      }
+        top: "0mm",
+        right: "0mm",
+        bottom: "0mm",
+        left: "0mm",
+      },
     });
 
     await browser.close();
@@ -230,7 +230,7 @@ async function generateCV(inputPath, outputPathPDF, title) {
 
 async function main() {
   const projectRoot = join(__dirname, "..");
-  const docsDir = join(projectRoot, "docs");
+  const sourceDir = join(projectRoot, "src", "assets");
   const outputDir = join(projectRoot, "_site", "assets");
 
   // Ensure output directory exists
@@ -240,13 +240,13 @@ async function main() {
 
   // Generate both CVs as PDFs
   await generateCV(
-    join(docsDir, "Currículum ES.md"),
+    join(sourceDir, "Currículum ES.md"),
     join(outputDir, "curriculum-es.pdf"),
     "Currículum - Gabriel Cuétara Flores",
   );
 
   await generateCV(
-    join(docsDir, "Currículum EN.md"),
+    join(sourceDir, "Currículum EN.md"),
     join(outputDir, "curriculum-en.pdf"),
     "CV - Gabriel Cuétara Flores",
   );
