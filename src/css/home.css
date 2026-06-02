@@ -3,8 +3,12 @@
   border: 1px solid var(--color-surface-3);
   border-radius: var(--radius-xl);
   padding: var(--card-padding);
-  transition: all var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
   position: relative;
+  contain: layout style paint;
 }
 
 .card::before {
@@ -18,6 +22,9 @@
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s;
@@ -32,6 +39,7 @@
   box-shadow:
     0 12px 28px rgba(0, 0, 0, 0.3),
     0 0 40px rgba(16, 185, 129, 0.1);
+  will-change: transform;
 }
 
 .card:hover::before {
@@ -451,6 +459,9 @@
     linear-gradient(#fff 0 0) content-box,
     linear-gradient(#fff 0 0);
   -webkit-mask-composite: xor;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
   mask-composite: exclude;
   opacity: 0;
   transition: opacity 0.3s;
@@ -1126,15 +1137,17 @@
 /* Cursor glow effect */
 .cursor-glow {
   position: fixed;
+  top: 0;
+  left: 0;
   width: 400px;
   height: 400px;
   background: radial-gradient(circle, var(--color-accent-glow) 0%, transparent 70%);
   pointer-events: none;
   z-index: 9999;
-  transform: translate(-50%, -50%);
   transition: opacity 0.3s;
   opacity: 0.02;
   mix-blend-mode: screen;
+  will-change: transform;
 }
 
 body:hover .cursor-glow {

@@ -2,45 +2,49 @@
 
 garycuetara@gmail.com | linkedin.com/in/gabrielcuetara | github.com/gcuetaraf
 
-Desarrollador full-stack especializado en React, TypeScript, Next.js y arquitecturas frontend escalables. Experiencia construyendo design systems, integrando servicios de terceros y colaborando con equipos multidisciplinares en entornos de alto crecimiento.
+Ingeniero Frontend Senior con más de 7 años de experiencia desarrollando aplicaciones web y móviles escalables con React, Next.js, TypeScript y React Native. Especializado en arquitectura frontend, sistemas de diseño, developer experience y desarrollo de producto desde la idea hasta producción. Experiencia diseñando monorepos, construyendo librerías de componentes compartidos, liderando iniciativas técnicas y colaborando con backend, servicios cloud e integraciones de IA.
 
 ## Experiencia
 
-### Desarrollador de aplicaciones
+**Desarrollador de Aplicaciones**
 
 **Storimake** | Oct 2023 – Jun 2026
 
-- Diseñé monorepo con 3 aplicaciones Next.js y 6 packages compartidos usando TypeScript en modo estricto, pipelines de build automatizadas y configuraciones de ESLint y Prettier.
-- Construí librería de componentes React con Radix UI y shadcn documentada en Storybook, sirviendo primitivos UI compartidos entre aplicaciones.
-- Desarrollé flujos completos de gestión de proyectos creativos: reservas de fotógrafos/videógrafos, generación de facturas, pagos Stripe, gestión de contenido y colaboración en tiempo real.
-- Contribuí al backend de plataforma audiovisual con TypeScript, Express.js, TypeORM, RabbitMQ, AWS (Bedrock AI, S3), arquitectura DDD, inyección de dependencias y testing con Vitest.
-
-### Desarrollador de aplicaciones
+- Responsable de la arquitectura frontend y su implementación en múltiples aplicaciones Next.js en un entorno de startup de alta velocidad.
+- Construcción y mantenimiento de un design system con más de 100 componentes reutilizables usando React, Radix UI, shadcn/ui y Storybook, asegurando consistencia visual en 3 aplicaciones.
+- Diseño e implementación de una arquitectura monorepo con Turborepo desde cero, consolidando 3 aplicaciones Next.js y 6 paquetes compartidos utilizados por un equipo de 4 ingenieros.
+- Desarrollo de sistemas end-to-end de reservas, facturación y pagos con Stripe para un marketplace de dos caras con más de 30 negocios, 200+ profesionales freelance, más de 90K€ en pagos procesados y 2.900+ cuentas conectadas de Stripe.
+- Contribución al backend con TypeScript, Express.js, TypeORM, RabbitMQ y AWS, soportando flujos de media y funcionalidades de IA.
 
 **Plexus Tech** | Ene 2022 – Nov 2023
 
-- Desarrollé aplicaciones React Native para clientes de Salud y e-commerce con checkout multinivel, carrito, fidelización y cuentas de usuario en iOS y Android.
-- Analicé rendimiento móvil reduciendo operaciones de carrito de 7.9s a valores óptimos mediante optimización Redux, caché de datos y mejoras en FlatList.
-- Lideré migraciones de Android SDK, Gradle y React Native (v0.61 a v0.64), resolviendo problemas de compatibilidad y asegurando despliegue continuo en app stores.
-- Resolví más de 15 incidencias en producción de pagos, UI y APIs. Implementé autenticación por token y logging de errores para monitorización.
-
-### Desarrollador de aplicaciones
+- Desarrollo y mantenimiento de aplicaciones React Native para clientes de salud y e-commerce con flujos de checkout, carrito, programas de fidelización y cuentas de usuario para iOS y Android.
+- Reducción de flujos críticos de la aplicación de 7,9s a menos de 2s mediante optimización de Redux, estrategias de caché y mejoras de rendimiento en React Native.
+- Liderazgo de la migración de React Native 0.61 a 0.64, incluyendo actualización de Android SDK y Gradle, asegurando continuidad en producción.
+- Resolución de más de 15 incidencias en producción en pagos, APIs y UX móvil, mejorando la estabilidad del sistema mediante mejoras en autenticación y monitorización de errores.
 
 **Bexfy** | Jun 2019 – Ene 2022
 
-- Desarrollé aplicación empresarial Angular para sistemas POS multiubicación con dashboards en tiempo real, integración Google Maps y almacenamiento AWS S3.
-- Desarrollé reproductor multimedia multiplataforma con TypeScript y Cordova para Android y Electron, con gestión de playlists, caché de contenido, instrumentación AWS IoT y modo kiosco.
-- Creé plataforma de gestión retail con configuración de terminales POS, geolocalización, catálogo de productos y administración de clientes usando Angular Material, RxJS y APIs REST.
-- Construí app kiosk React con catálogo, carrito, autenticación, multimedia e integración AWS IoT.
+- Desarrollo de una plataforma empresarial de gestión retail utilizada en múltiples ubicaciones, con analítica en tiempo real, gestión de POS, visualización geográfica y almacenamiento en la nube.
+- Construcción de un sistema de distribución de contenido multiplataforma para Android y escritorio usando TypeScript, Cordova y Electron, con soporte offline, sincronización y modo kiosco.
+- Desarrollo de una aplicación kiosk táctil en React con catálogo de productos, carrito, autenticación, funcionalidades multimedia e integración con AWS IoT.
 
 ## Especialidades
 
-**Frontend:** React, Next.js, Angular, React Native
+**Frontend:**
+React, Next.js, TypeScript, React Native, Angular, HTML5, CSS3, Tailwind CSS, Radix UI, shadcn/ui
 
-**Backend:** Node.js, Express, APIs REST
+**Backend:**
+Node.js, Express.js, TypeORM, PostgreSQL, MySQL, MongoDB, REST APIs, RabbitMQ
 
-**Arquitectura:** Turborepo, Domain Driven Design, sistemas de diseño
+**Infraestructura:**
+AWS (S3, Bedrock), CI/CD, Turborepo
 
-**Herramientas:** Storybook, Git, Stripe, HubSpot, Amplitude
+**Arquitectura:**
+Arquitectura Frontend, Sistemas de Diseño, Component Libraries, Domain-Driven Design (DDD)
 
-**IA:** Aplicaciones con LLM, interfaces conversacionales, sistemas de cualificación de leads
+**IA:**
+AWS Bedrock, Prompt Engineering, IA Conversacional
+
+**Herramientas:**
+Git, Storybook, Stripe, Amplitude, HubSpot, Vitest, ESLint, Prettier

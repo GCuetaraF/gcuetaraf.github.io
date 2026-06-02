@@ -30,12 +30,24 @@ document.addEventListener("DOMContentLoaded", () => {
   initStaggeredAnimations();
 });
 
+// Throttle helper
+function throttle(func, delay) {
+  let lastCall = 0;
+  return function (...args) {
+    const now = Date.now();
+    if (now - lastCall >= delay) {
+      lastCall = now;
+      func.apply(this, args);
+    }
+  };
+}
+
 // Magnetic button effect
 function initMagneticButtons() {
   const buttons = document.querySelectorAll(".btn, .social-link");
 
   buttons.forEach((button) => {
-    button.addEventListener("mousemove", (e) => {
+    const handleMouseMove = throttle((e) => {
       const rect = button.getBoundingClientRect();
       const x = e.clientX - rect.left - rect.width / 2;
       const y = e.clientY - rect.top - rect.height / 2;
@@ -48,11 +60,17 @@ function initMagneticButtons() {
         const moveY = (y / maxDistance) * 10;
         button.style.transform = `translate(${moveX}px, ${moveY}px)`;
       }
-    });
+    }, 16); // ~60fps
 
-    button.addEventListener("mouseleave", () => {
-      button.style.transform = "";
-    });
+    button.addEventListener("mousemove", handleMouseMove, { passive: true });
+
+    button.addEventListener(
+      "mouseleave",
+      () => {
+        button.style.transform = "";
+      },
+      { passive: true },
+    );
   });
 }
 
@@ -66,20 +84,31 @@ function initCursorGlow() {
     mouseY = 0;
   let glowX = 0,
     glowY = 0;
+  let animationId = null;
 
-  document.addEventListener("mousemove", (e) => {
+  const handleMouseMove = throttle((e) => {
     mouseX = e.clientX;
     mouseY = e.clientY;
-  });
+  }, 16);
+
+  document.addEventListener("mousemove", handleMouseMove, { passive: true });
 
   function animateGlow() {
-    glowX += (mouseX - glowX) * 0.1;
-    glowY += (mouseY - glowY) * 0.1;
+    const dx = mouseX - glowX;
+    const dy = mouseY - glowY;
 
-    cursorGlow.style.left = glowX + "px";
-    cursorGlow.style.top = glowY + "px";
+    // Stop animation if mouse hasn't moved significantly
+    if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
+      animationId = requestAnimationFrame(animateGlow);
+      return;
+    }
 
-    requestAnimationFrame(animateGlow);
+    glowX += dx * 0.1;
+    glowY += dy * 0.1;
+
+    cursorGlow.style.transform = `translate(${glowX - 200}px, ${glowY - 200}px)`;
+
+    animationId = requestAnimationFrame(animateGlow);
   }
 
   animateGlow();
@@ -114,32 +143,39 @@ function initStaggeredAnimations() {
   });
 }
 
-document.addEventListener("click", (e) => {
-  const target = e.target.closest('a[href^="#"]');
-  if (target) {
-    e.preventDefault();
-    const id = target.getAttribute("href").slice(1);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({
-        behavior: "smooth",
-        block: "center",
-      });
-
-      if (element.classList.contains("project-card")) {
-        document.querySelectorAll(".project-card.highlight").forEach((card) => {
-          card.classList.remove("highlight");
+// Use event delegation for smooth scroll
+document.addEventListener(
+  "click",
+  (e) => {
+    const target = e.target.closest('a[href^="#"]');
+    if (target) {
+      e.preventDefault();
+      const id = target.getAttribute("href").slice(1);
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({
+          behavior: "smooth",
+          block: "center",
         });
 
-        element.classList.add("highlight");
+        if (element.classList.contains("project-card")) {
+          // Use single query and cache
+          const highlightedCards = document.querySelectorAll(".project-card.highlight");
+          highlightedCards.forEach((card) => {
+            card.classList.remove("highlight");
+          });
 
-        setTimeout(() => {
-          element.classList.remove("highlight");
-        }, 2000);
+          element.classList.add("highlight");
+
+          setTimeout(() => {
+            element.classList.remove("highlight");
+          }, 2000);
+        }
       }
     }
-  }
-});
+  },
+  { passive: false },
+);
 
 // Ripple effect for buttons
 document.addEventListener("click", (e) => {

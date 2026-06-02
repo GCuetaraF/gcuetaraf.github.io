@@ -9,38 +9,57 @@ if (pageType === "blog-post" && blogLang) {
 
 document.documentElement.setAttribute("lang", currentLang);
 
+// Cache DOM queries for better performance
+let cachedElements = null;
+
+function cacheLanguageElements() {
+  if (cachedElements) return cachedElements;
+
+  cachedElements = {
+    textElements: document.querySelectorAll("[data-lang-en], [data-lang-es]"),
+    htmlElements: document.querySelectorAll("[data-html-lang-en], [data-html-lang-es]"),
+    langButtons: document.querySelectorAll(".lang-btn"),
+    langElements: Array.from(document.querySelectorAll("[lang]")).filter((el) => el !== document.documentElement),
+    blogCards: document.querySelectorAll(".blog-card[data-lang]"),
+  };
+
+  return cachedElements;
+}
+
 function updateLanguage(lang) {
   currentLang = lang;
   localStorage.setItem("preferredLanguage", lang);
   document.documentElement.setAttribute("lang", lang);
 
-  document.querySelectorAll("[data-lang-en], [data-lang-es]").forEach((el) => {
-    const content = el.getAttribute(`data-lang-${lang}`);
-    if (content) {
-      el.textContent = content;
-    }
-  });
+  const elements = cacheLanguageElements();
 
-  document.querySelectorAll("[data-html-lang-en], [data-html-lang-es]").forEach((el) => {
-    const content = el.getAttribute(`data-html-lang-${lang}`);
-    if (content) {
-      el.innerHTML = content;
-    }
-  });
+  // Batch DOM updates
+  requestAnimationFrame(() => {
+    elements.textElements.forEach((el) => {
+      const content = el.getAttribute(`data-lang-${lang}`);
+      if (content) {
+        el.textContent = content;
+      }
+    });
 
-  document.querySelectorAll(".lang-btn").forEach((btn) => {
-    btn.classList.toggle("active", btn.dataset.lang === lang);
-  });
+    elements.htmlElements.forEach((el) => {
+      const content = el.getAttribute(`data-html-lang-${lang}`);
+      if (content) {
+        el.innerHTML = content;
+      }
+    });
 
-  document.querySelectorAll("[lang]").forEach((el) => {
-    if (el !== document.documentElement) {
+    elements.langButtons.forEach((btn) => {
+      btn.classList.toggle("active", btn.dataset.lang === lang);
+    });
+
+    elements.langElements.forEach((el) => {
       el.style.display = el.getAttribute("lang") === lang ? "" : "none";
-    }
-  });
+    });
 
-  // Filter blog cards by language
-  document.querySelectorAll(".blog-card[data-lang]").forEach((card) => {
-    card.style.display = card.getAttribute("data-lang") === lang ? "" : "none";
+    elements.blogCards.forEach((card) => {
+      card.style.display = card.getAttribute("data-lang") === lang ? "" : "none";
+    });
   });
 }
 

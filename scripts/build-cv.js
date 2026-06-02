@@ -90,7 +90,42 @@ const htmlTemplate = (title, content) => `<!DOCTYPE html>
       margin-top: 10pt;
     }
 
-    /* Job Titles */
+    /* Position title (first bold text after Experience heading) */
+    h2 + p strong:only-child {
+      display: block;
+      font-size: 10.5pt;
+      font-weight: 600;
+      color: #0f172a;
+      margin-bottom: 10pt;
+      font-style: normal;
+    }
+
+    /* Company names - keeping bold and prominent */
+    h2 + p + p strong,
+    p + p strong {
+      font-size: 9.5pt;
+      font-weight: 600;
+      color: #0f172a;
+    }
+
+    /* Company and date lines - make dates subtle */
+    h2 + p + p,
+    ul + p {
+      font-size: 8.5pt;
+      color: #64748b;
+      margin-bottom: 4pt;
+      font-style: italic;
+    }
+
+    /* Keep company names in normal style within the italic context */
+    h2 + p + p strong,
+    ul + p strong {
+      color: #475569;
+      font-weight: 600;
+      font-style: normal;
+    }
+
+    /* Job Titles (legacy - keeping for other sections if needed) */
     h3 {
       font-size: 10.5pt;
       font-weight: 600;
@@ -112,6 +147,12 @@ const htmlTemplate = (title, content) => `<!DOCTYPE html>
       color: #475569;
       font-weight: 600;
       font-style: normal;
+    }
+
+    /* Spacing between job entries */
+    p strong + br + br {
+      display: block;
+      margin-bottom: 8pt;
     }
 
     /* Regular paragraphs */
@@ -151,15 +192,26 @@ const htmlTemplate = (title, content) => `<!DOCTYPE html>
     }
 
     /* Skills section special styling */
-    h2:last-of-type + p {
-      margin-bottom: 0;
+    h2:last-of-type ~ p {
+      margin-top: 2pt;
+      margin-bottom: 2pt;
+      font-size: 9pt;
+      color: #1a1a1a;
+      font-style: normal;
+      text-align: left;
+      line-height: 1.4;
     }
 
-    h2:last-of-type + p strong {
+    h2:last-of-type + p {
+      margin-top: 2pt;
+    }
+
+    h2:last-of-type ~ p strong {
       color: #0f172a;
       font-weight: 700;
       display: inline-block;
       min-width: 80pt;
+      font-style: normal;
     }
 
     /* Page break control */

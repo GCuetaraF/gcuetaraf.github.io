@@ -2,6 +2,7 @@
   padding-block: 6rem 4rem;
   background: var(--color-surface-0);
   min-height: 100vh;
+  contain: layout style;
 }
 
 .back-link {
@@ -22,6 +23,7 @@
 .post {
   max-width: 800px;
   margin: 0 auto;
+  contain: layout style;
 }
 
 .post__header {
@@ -59,6 +61,7 @@
   font-size: var(--font-size-lg);
   line-height: var(--line-height-relaxed);
   color: var(--color-text-secondary);
+  contain: layout style;
 }
 
 .post__content h2 {

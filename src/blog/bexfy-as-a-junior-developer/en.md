@@ -19,8 +19,7 @@ Each application had real users, product requirements, and years of decisions ma
 
 This job threw me into battle from the moment I stepped into the office and taught me a lesson I believe in to this day: most software is not about creating systems, it's about understanding systems that already exist.
 
-
-## Read Before You Write
+## Read before you write
 
 As a junior developer you don't have a well developed sense of urgency yet. Time is the motivator of all decisions: you want to ship new features as fast as possible, you want deliverables ready for each review, and client-facing teams push for a faster turn-around.
 
