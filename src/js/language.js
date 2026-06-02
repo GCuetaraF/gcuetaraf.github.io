@@ -1,5 +1,12 @@
 let currentLang = localStorage.getItem("preferredLanguage") || "en";
 
+// If we're on a blog post page, use the page's language instead
+const pageType = document.body.dataset.pageType;
+const blogLang = document.body.dataset.blogLang;
+if (pageType === "blog-post" && blogLang) {
+  currentLang = blogLang;
+}
+
 document.documentElement.setAttribute("lang", currentLang);
 
 function updateLanguage(lang) {
@@ -30,9 +37,31 @@ function updateLanguage(lang) {
       el.style.display = el.getAttribute("lang") === lang ? "" : "none";
     }
   });
+
+  // Filter blog cards by language
+  document.querySelectorAll(".blog-card[data-lang]").forEach((card) => {
+    card.style.display = card.getAttribute("data-lang") === lang ? "" : "none";
+  });
 }
 
 function updateLanguageWithTransition(lang) {
+  // Check if we're on a blog post page
+  const pageType = document.body.dataset.pageType;
+  const blogSlug = document.body.dataset.blogSlug;
+  const currentLang = document.body.dataset.blogLang;
+
+  if (pageType === "blog-post" && blogSlug) {
+    // Navigate to the alternate language version of the blog post
+    if (lang === "es" && currentLang === "en") {
+      window.location.href = `/blog/${blogSlug}/es/`;
+      return;
+    } else if (lang === "en" && currentLang === "es") {
+      window.location.href = `/blog/${blogSlug}/`;
+      return;
+    }
+  }
+
+  // Regular language switching for non-blog pages
   if (!document.startViewTransition) {
     updateLanguage(lang);
     return;
@@ -63,7 +92,7 @@ document.addEventListener("DOMContentLoaded", () => {
     downloadCvBtn.addEventListener("click", () => {
       const cvFile = currentLang === "es" ? "curriculum-es.pdf" : "curriculum-en.pdf";
       const cvPath = `/assets/${cvFile}`;
-      
+
       // Create a temporary link and trigger download
       const link = document.createElement("a");
       link.href = cvPath;

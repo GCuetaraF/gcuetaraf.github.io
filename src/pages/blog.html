@@ -25,7 +25,7 @@ css:
 
     <div class="blog-listing__grid">
       {% for post in collections.blog %}
-        <article class="blog-card">
+        <article class="blog-card" data-lang="{{ post.data.lang }}">
           {% if post.data.thumb %}
             <a href="{{ post.url }}" class="blog-card__image">
               <img 

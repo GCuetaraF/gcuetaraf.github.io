@@ -5,8 +5,8 @@
     </h2>
 
     <div class="blog-preview__grid">
-      {% for post in collections.blog | limit(3) %}
-        <article class="blog-card animate-on-scroll">
+      {% for post in collections.blog | limit(6) %}
+        <article class="blog-card animate-on-scroll" data-lang="{{ post.data.lang }}">
           {% if post.data.thumb %}
             <a href="{{ post.url }}" class="blog-card__image">
               <img

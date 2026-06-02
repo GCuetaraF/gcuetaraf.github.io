@@ -224,8 +224,3 @@ Storybook began as a way to preview components in isolation, but it's quickly be
 
 Even though the team has shifted to other features, Storybook is now part of my daily workflow. I prototype in Storybook first, which makes development smoother, reviews clearer, and collaboration more inclusive.
 
----
-
-If you're working in a startup or small team, Storybook can be a game-changer. Instead of juggling staging builds, backend mocks, and screenshots, you get a single space where components come to life.
-
-Try setting up a single component in Storybook this week and you'll see the benefits immediately.

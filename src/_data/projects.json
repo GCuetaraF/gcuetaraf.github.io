@@ -1,14 +1,14 @@
 [
   {
-    "name": "rp-sheet-front",
-    "url": "https://github.com/gcuetaraf/rp-sheet-front",
+    "name": "eg-lierno-app",
+    "url": "https://github.com/GCuetaraF/eg-lierno-app",
     "description": {
       "en": "Frontend for a role-playing game character sheet application.",
-      "es": "Frontend para una aplicación de hojas de personajes de juegos de rol."
+      "es": "Aplicación fullstack para gestión de campañas de D&D."
     },
     "technologies": [
       "React",
-      "TypeScript"
+      "Node.js"
     ],
     "featured": true,
     "order": 2
@@ -29,15 +29,14 @@
     "order": 1
   },
   {
-    "name": "learning-p5.js",
-    "url": "https://github.com/gcuetaraf/learning-p5.js",
+    "name": "gcuetaraf.github.io",
+    "url": "https://github.com/GCuetaraF/gcuetaraf.github.io",
     "description": {
-      "en": "Creative coding experiments and projects using p5.js library.",
-      "es": "Experimentos y proyectos de programación creativa usando la librería p5.js."
+      "en": "The professional portfolio of a web developer.",
+      "es": "El portafolio profesional de un desarrollador web."
     },
     "technologies": [
-      "JavaScript",
-      "p5.js"
+      "Eleventy"
     ],
     "featured": true,
     "order": 4

@@ -17,7 +17,7 @@ layout: base.html
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.css">
     <link rel="stylesheet" href="/css/prism-custom.css">
   </head>
-  <body>
+  <body data-page-type="blog-post" data-blog-slug="{{ slug }}" data-blog-lang="{{ lang }}">
     {% include "components/language-switcher.html" %}
 
     <main class="blog-post">

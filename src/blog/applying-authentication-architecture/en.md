@@ -130,4 +130,4 @@ What we've built so far is already maintainable and expressive, but there's room
 
 ## Final words
 
-That's where I landed for now. It's not the final word on permissions, but it's a pattern that feels maintainable without being over-engineered. Maybe in a year I'll swap it all out for something else, but that's half the fun of keeping a log like this.
+That's where I landed for now. It's not the final word on permissions, but it's a pattern that feels maintainable without being over-engineered.

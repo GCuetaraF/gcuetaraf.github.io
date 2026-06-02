@@ -37,9 +37,18 @@ export default async function (eleventyConfig) {
     return array.slice(0, limit);
   });
 
-  // Blog posts collection
+  // Blog posts collection - supports both en.md and es.md
   eleventyConfig.addCollection("blog", (collection) => {
-    return collection.getFilteredByGlob("src/blog/**/index.md").sort((a, b) => b.date - a.date);
+    return collection.getFilteredByGlob("src/blog/**/*.md").sort((a, b) => b.date - a.date);
+  });
+
+  // Blog posts by language
+  eleventyConfig.addCollection("blogEn", (collection) => {
+    return collection.getFilteredByGlob("src/blog/**/en.md").sort((a, b) => b.date - a.date);
+  });
+
+  eleventyConfig.addCollection("blogEs", (collection) => {
+    return collection.getFilteredByGlob("src/blog/**/es.md").sort((a, b) => b.date - a.date);
   });
 
   return {
