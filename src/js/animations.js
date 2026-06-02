@@ -17,20 +17,15 @@ document.addEventListener("DOMContentLoaded", () => {
     observer.observe(el);
   });
 
-  // Magnetic button effect
   initMagneticButtons();
 
-  // Cursor glow effect
   initCursorGlow();
 
-  // Floating code symbols
   initFloatingSymbols();
 
-  // Staggered card animations
   initStaggeredAnimations();
 });
 
-// Throttle helper
 function throttle(func, delay) {
   let lastCall = 0;
   return function (...args) {
@@ -42,7 +37,6 @@ function throttle(func, delay) {
   };
 }
 
-// Magnetic button effect
 function initMagneticButtons() {
   const buttons = document.querySelectorAll(".btn, .social-link");
 
@@ -74,7 +68,6 @@ function initMagneticButtons() {
   });
 }
 
-// Cursor glow effect
 function initCursorGlow() {
   const cursorGlow = document.createElement("div");
   cursorGlow.className = "cursor-glow";
@@ -97,7 +90,6 @@ function initCursorGlow() {
     const dx = mouseX - glowX;
     const dy = mouseY - glowY;
 
-    // Stop animation if mouse hasn't moved significantly
     if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
       animationId = requestAnimationFrame(animateGlow);
       return;
@@ -114,7 +106,6 @@ function initCursorGlow() {
   animateGlow();
 }
 
-// Floating code symbols
 function initFloatingSymbols() {
   const hero = document.querySelector(".hero");
   if (!hero) return;
@@ -135,7 +126,6 @@ function initFloatingSymbols() {
   }
 }
 
-// Staggered animations for cards
 function initStaggeredAnimations() {
   const cards = document.querySelectorAll(".card");
   cards.forEach((card, index) => {
@@ -143,7 +133,6 @@ function initStaggeredAnimations() {
   });
 }
 
-// Use event delegation for smooth scroll
 document.addEventListener(
   "click",
   (e) => {
@@ -159,7 +148,6 @@ document.addEventListener(
         });
 
         if (element.classList.contains("project-card")) {
-          // Use single query and cache
           const highlightedCards = document.querySelectorAll(".project-card.highlight");
           highlightedCards.forEach((card) => {
             card.classList.remove("highlight");
@@ -177,7 +165,6 @@ document.addEventListener(
   { passive: false },
 );
 
-// Ripple effect for buttons
 document.addEventListener("click", (e) => {
   const button = e.target.closest(".btn");
   if (button) {
