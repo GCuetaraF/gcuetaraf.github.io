@@ -9,7 +9,7 @@
 <meta name="description" content="{{ description or site.description }}">
 <meta name="author" content="{{ site.author.name }}">
 
-{% set socialImage = thumb.base or site.defaultImage or(site.url + "/social/") %}
+{% set socialImage = thumb.base or (site.url + "/social/blog/" + slug + "/" + ("es/" if lang == "es" else "") + "social.png") if layout == "blog-post.html" else (site.url + "/social/default.png") %}
 {% set isArticle = layout == "blog-post.html" %}
 
 <meta property="og:type" content="{% if isArticle %}article{% else %}website{% endif %}">

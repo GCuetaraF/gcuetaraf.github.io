@@ -8,7 +8,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "pnpm exec eleventy --serve",
     "build:cv": "node scripts/build-cv.js",
-    "build": "pnpm exec eleventy && pnpm run build:cv",
+    "build:social": "node scripts/build-social-images.js",
+    "build": "pnpm exec eleventy && pnpm run build:cv && pnpm run build:social",
     "postinstall": "pnpm exec puppeteer browsers install chrome"
   },
   "keywords": [],
