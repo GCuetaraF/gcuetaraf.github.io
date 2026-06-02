@@ -2,7 +2,8 @@
   "name": "Gabriel Cuétara",
   "title": "Software developer | Web enthusiast",
   "description": "Full-Stack Developer specializing in React, React Native, and modern web technologies. Building scalable web and mobile applications.",
-  "url": "https://your-domain.com",
+  "url": "https://gcuetaraf.github.io",
+  "defaultImage": "https://gcuetaraf.github.io/social/",
   "author": {
     "name": "Gabriel Cuétara",
     "email": "garycuetara@gmail.com",
@@ -10,8 +11,5 @@
     "linkedin": "https://www.linkedin.com/in/gabrielcuetara"
   },
   "defaultLanguage": "en",
-  "supportedLanguages": [
-    "en",
-    "es"
-  ]
+  "supportedLanguages": ["en", "es"]
 }

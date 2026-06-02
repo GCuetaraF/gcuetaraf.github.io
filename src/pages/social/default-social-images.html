@@ -1,0 +1,189 @@
+---
+permalink: /social/
+eleventyExcludeFromCollections: true
+---
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width,initial-scale=1"/>
+    <link rel="stylesheet" href="/css/variables.css">
+    <title>{{ site.name }} - Social Card</title>
+    <style>
+      :root {
+        --w: 1200px;
+        --h: 630px;
+      }
+
+      body,
+      html {
+        height: 100%;
+        margin: 0;
+        background: var(--color-surface-0);
+        color: var(--color-text-primary);
+        font-family: var(--font-sans);
+      }
+
+      .card {
+        width: var(--w);
+        height: var(--h);
+        background: var(--color-surface-0);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding: 80px;
+        box-sizing: border-box;
+        position: relative;
+        overflow: hidden;
+      }
+
+      /* Animated background grid - from hero section */
+      .card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: linear-gradient(rgba(16, 185, 129, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(16, 185, 129, 0.05) 1px, transparent 1px);
+        background-size: 50px 50px;
+        mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+        -webkit-mask-image: radial-gradient(ellipse 80% 50% at 50% 50%, black 40%, transparent 100%);
+        z-index: 0;
+      }
+
+      .card__content {
+        position: relative;
+        z-index: 2;
+      }
+
+      .name {
+        font-size: 96px;
+        font-weight: 700;
+        line-height: 1.1;
+        margin: 0 0 24px;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        position: relative;
+      }
+
+      .name::after {
+        content: "";
+        position: absolute;
+        bottom: -10px;
+        left: 0;
+        width: 200px;
+        height: 4px;
+        background: var(--gradient-primary);
+      }
+
+      .tagline {
+        font-size: 36px;
+        color: var(--color-text-secondary);
+        margin: 32px 0 0;
+        font-weight: var(--font-weight-medium);
+        max-width: 900px;
+      }
+
+      .description {
+        font-size: 24px;
+        color: var(--color-text-tertiary);
+        margin: 24px 0 0;
+        max-width: 900px;
+        line-height: 1.5;
+      }
+
+      /* Gradient decoration - from hero section */
+      .decoration {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 60%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 1;
+      }
+
+      .decoration__gradient {
+        position: absolute;
+        top: 10%;
+        right: -10%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, var(--color-primary) 0%, var(--color-secondary) 40%, transparent 70%);
+        opacity: 0.15;
+        filter: blur(100px);
+      }
+
+      .decoration::after,
+      .decoration::before {
+        content: "";
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        border-radius: 50%;
+        filter: blur(80px);
+        opacity: 0.1;
+      }
+
+      .decoration::before {
+        top: 30%;
+        right: 10%;
+        background: radial-gradient(circle, var(--color-secondary) 0%, transparent 70%);
+      }
+
+      .decoration::after {
+        bottom: 20%;
+        right: 30%;
+        background: radial-gradient(circle, var(--color-accent) 0%, transparent 70%);
+      }
+
+      .footer {
+        position: absolute;
+        bottom: 60px;
+        left: 80px;
+        right: 80px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        z-index: 2;
+      }
+
+      .footer__site {
+        font-size: 20px;
+        color: var(--color-primary);
+        font-weight: var(--font-weight-medium);
+      }
+
+      .footer__logo {
+        font-size: 48px;
+        font-weight: 700;
+        background: var(--gradient-primary);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="card">
+      <div class="decoration">
+        <div class="decoration__gradient"></div>
+      </div>
+
+      <div class="card__content">
+        <h1 class="name">{{ site.name }}</h1>
+        <p class="tagline">{{ site.title }}</p>
+        <p class="description">{{ site.description }}</p>
+      </div>
+
+      <div class="footer">
+        <span class="footer__site">{{ site.url | replace("https://", "") | replace("http://", "") | replace("/", "") }}</span>
+        <span class="footer__logo">GC</span>
+      </div>
+    </div>
+  </body>
+</html>
