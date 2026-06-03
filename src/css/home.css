@@ -724,6 +724,16 @@
   color: var(--color-text-primary);
 }
 
+.job-card__position a {
+  color: var(--color-text-primary);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.job-card__position a:hover {
+  color: var(--color-primary);
+}
+
 .job-card__company {
   font-size: var(--font-size-lg);
   color: var(--color-primary);

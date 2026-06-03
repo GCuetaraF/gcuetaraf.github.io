@@ -14,7 +14,13 @@
               <div class="job-card__header">
                 <div>
                   <h3 class="job-card__position">
-                    <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
+                    {% if job.link %}
+                      <a href="{{ job.link }}">
+                        <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
+                      </a>
+                    {% else %}
+                      <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
+                    {% endif %}
                   </h3>
                   <p class="job-card__company">{{ job.company }}</p>
                 </div>

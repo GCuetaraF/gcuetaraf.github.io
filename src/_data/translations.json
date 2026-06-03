@@ -30,7 +30,8 @@
       "title": "Experience",
       "present": "Present",
       "remote": "Remote",
-      "duration": "Duration"
+      "duration": "Duration",
+      "readArticle": "Read Article"
     },
     "projects": {
       "title": "Featured Projects",
@@ -89,7 +90,8 @@
       "title": "Experiencia",
       "present": "Actualidad",
       "remote": "Remoto",
-      "duration": "Duración"
+      "duration": "Duración",
+      "readArticle": "Leer Artículo"
     },
     "projects": {
       "title": "Proyectos Destacados",

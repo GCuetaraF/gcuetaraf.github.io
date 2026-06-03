@@ -13,6 +13,7 @@
     "remote": true,
     "startDate": "2023-10",
     "endDate": null,
+    "link": "/blog/storimake-building-a-creative-platform",
     "duration": {
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
@@ -45,6 +46,7 @@
     "remote": true,
     "startDate": "2022-01",
     "endDate": "2023-11",
+    "link": "/blog/plexus-tech-consulting",
     "duration": {
       "en": "1 year 11 months",
       "es": "1 año 11 meses"
@@ -72,6 +74,7 @@
     "remote": false,
     "startDate": "2019-06",
     "endDate": "2022-01",
+    "link": "/blog/bexfy-as-a-junior-developer",
     "duration": {
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
