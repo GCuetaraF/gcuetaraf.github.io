@@ -7,67 +7,62 @@ thumb:
   base: https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg
 ---
 
-Three years ago, I joined Storimake as the only frontend engineer.
+Three years ago, I joined Storimake as the only frontend engineer in the company.
 
-Storimake is a marketplace for creative production where clients create projects; photographers, videographers, editors, and other contributors complete the work and the platform coordinates the entire process.
+Storimake is a platform that connects clients with photographers, videographers, editors, and other creative professionals to produce content at scale. At first, the workflow seems simple: a client requests a project, a team of professionals executes it, and the content is delivered. However, behind this apparent simplicity lies a considerable amount of operational complexity.
 
-Behind that workflow sat three different products, multiple user roles, complex permissions, file uploads, payment processing, and thousands of small product decisions.
+Over time, I became responsible for three production applications, a shared design system, the frontend deployment infrastructure, the platform's internationalization, analytics integrations, GDPR compliance, and a permission model that had to work consistently across different user types.
 
-Over the next three years, I became responsible for all of it.
-
-By the time I left, I had built and maintained:
-
-- Three production applications
-- A shared design system
-- Deployment infrastructure
-- Internationalization
-- Analytics and GDPR compliance
-- A permission model spanning multiple user types
-
-Looking back, the most valuable lessons had very little to do with React, Next.js, or TypeScript. It's about the engineering decisions that allowed one person to keep shipping without drowning in complexity.
+Looking back, the most important lessons I take away from those years have little to do with React, Next.js, or TypeScript. What had the biggest impact on my day-to-day work were the decisions that allowed a single person to keep developing new features without each change becoming more costly than the last.
 
 ## The real challenge
 
-The hardest part wasn't writing sensible code, it was preventing the platform from becoming harder to change every month.
+It's easy to think that the work consists primarily of writing code, but in projects that grow over several years, the real challenge tends to be something else. Every new feature introduces new states, new exceptions, and new dependencies between parts of the system that were previously isolated. At first, it's barely noticeable. Months later, however, you start encountering seemingly simple tasks that require modifications in multiple places, and deployments that generate more uncertainty than they should.
 
-Every feature introduced new workflows, every workflow introduced new edge cases, every edge case introduced new maintenance costs.
+Since I didn't have a frontend team behind me to delegate responsibility to, many decisions ended up passing through a simple filter:
 
-Without a team to fall back on, I couldn't afford solutions that worked today but created problems six months later and that constraint shaped almost every architectural decision I made.
+"Will I still want to maintain this six months from now?"
 
-## Why we built a monorepo
+That constraint ended up shaping a large part of the architecture.
 
-Early on, it became clear that the platform served very different users. The obvious solution would have been separate applications with separate codebases, but the problem is that the underlying concepts were identical. Projects were still  projects, users were still users and permissions were still permissions.
+## Why a monorepo
 
-Every duplicated component would need to be maintained multiple times and every workflow change would need to be implemented multiple times.
+Very early on, it became clear that the platform would eventually consist of multiple applications. Clients, professionals, and the internal team all had different needs, and each required its own interface.
 
-As a solo developer, I couldn't afford that. The monorepo wasn't a technical preference, it was a survival strategy.
+The most obvious alternative was to separate each application into its own repository, but there was a problem: even though the interfaces were different, the domain was largely the same. Projects were projects, users were users, and the permission rules affected all products equally.
 
-## The challenge of business logic
+Whenever an important business workflow changed, the impact was usually felt across multiple applications. Maintaining independent repositories would have meant duplicating components, types, domain models, and parts of the business logic. For a large organization, that might not have been a significant issue. For a single person, it was.
 
-The most difficult code I wrote wasn't UI code, It was workflow logic.
+That's why the monorepo wasn't a technological preference. It was a practical decision to reduce duplication and maintain a single source of truth for the platform's most important concepts.
 
-Creative production sounds straightforward when you describe it in a sentence:
+## Where the real complexity was
 
-A client requests photos, the photographer takes the photos, the editor edits them and the client reviews the final result.
+Interestingly, the most difficult code to maintain wasn't the UI.
 
-But inreality, every step depends on another step.
+When you explain the product in a conversation, everything sounds straightforward: a client requests content, professionals do the work, and the client approves the final result. The problem is that real systems rarely operate according to such simple rules.
 
-Editors can't edit files that haven't been uploaded. Reviewers can't approve content that hasn't been delivered and contributors shouldn't access projects they aren't assigned to.
+An editor can't work on files that haven't been uploaded yet. A client can't approve content that hasn't been delivered. Professionals can only access specific projects. Some services require multiple professionals working across different stages of production. Others allow revisions, partial deliveries, or workflows that vary depending on the type of production.
 
-Once multiple user roles, project states, and service types entered the picture, the complexity grew quickly. Most bugs weren't visual, they came from missing business rules.
+Most of the significant bugs weren't related to buttons, forms, or visual styling. They usually appeared when a business rule failed to account for a specific edge case, or when two parts of the system interpreted the same process differently.
 
-The UI was often the easy part. Modeling the workflow correctly was the real challenge.
+Over time, I realized that a large portion of the work consisted of modeling these rules correctly and ensuring they were applied consistently throughout the platform.
 
-## What I'd do differently
+## What I would do differently
 
-Not every decision aged well. Some packages became too large, some responsibilities became unclear. We waited too long to invest in Storybook, we never established a strong end-to-end testing strategy, we documented implementation details more than architectural decisions.
+Not every decision turned out to be the right one.
 
-None of those problems were catastrophic, but became more expensive over time. That's one of the recurring themes of software engineering: few decisions fail immediately and instead accumulate interest you will have to pay up at some point.
+Some packages grew larger than they should have. Some responsibilities were poorly defined, and we were too slow to invest in tools that would have improved the developer experience. Storybook was introduced later than ideal, and we never established a solid end-to-end testing strategy.
 
-## What three years taught me
+We also weren't particularly good at documenting architectural decisions. There was plenty of documentation explaining how specific implementations worked, but much less explaining why certain decisions were made. Over time, that information often becomes more valuable than the implementation details themselves.
 
-After three years, my biggest takeaway is that architecture is really about preserving momentum. The best technical decisions weren't the most sophisticated, they were the decisions that reduced future work.
+None of these issues were catastrophic on their own. The interesting thing is that they all shared the same characteristic: they didn't create immediate problems. They simply made development slightly slower, slightly more difficult, or slightly more expensive every month.
 
-As engineers, we often focus on what we build but over time, I've become more interested in what I don't have to build again. That's where leverage comes from.
+## What I learned from these three years
 
-And when you're the only frontend engineer supporting an entire platform, leverage becomes one of the most important tools you have.
+After three years, my conclusion is that architecture has less to do with technical sophistication than we're often led to believe.
+
+The most valuable decisions weren't the most clever or the most complex. They were the ones that allowed us to maintain a healthy development pace as the product continued to grow.
+
+Over time, I stopped focusing on how much time a decision would save me today and started focusing on how much time it would save a year from now. In long-lived projects, that difference becomes significant.
+
+When you're the only person maintaining a large part of the platform, the ability to keep moving without being slowed down by complexity isn't an advantage. It's a necessity.

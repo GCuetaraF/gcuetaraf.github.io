@@ -7,57 +7,60 @@ thumb:
   base: https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg
 ---
 
-Hace tres años, me uní a Storimake como el único ingeniero frontend.
+Hace tres años me uní a Storimake como el único ingeniero frontend de la empresa.
 
-Storimake es un marketplace para producción creativa donde los clientes pueden creat proyectos; los fotógrafos, videógrafos, editores y otros colaboradores completan el trabajo y la plataforma coordina todo el proceso.
+Storimake es una plataforma que conecta clientes con fotógrafos, videógrafos, editores y otros profesionales creativos para producir contenido a escala. A primera vista, el flujo parece sencillo: un cliente solicita un proyecto, un equipo lo ejecuta y el contenido se entrega. Sin embargo, detrás de esa aparente simplicidad había una cantidad considerable de complejidad operativa.
 
-Detrás de este flujo de trabajo hay tres productos diferentes, múltiples roles de usuario, permisos complejos, subida de archivos, procesamiento de pago y miles de pequeñas decisiones de producto.
+Con el tiempo terminé siendo responsable de tres aplicaciones en producción, un sistema de diseño compartido, la infraestructura de despliegue frontend, la internacionalización de la plataforma, integraciones de analítica y cumplimiento de GDPR, además de un modelo de permisos que debía funcionar de forma consistente para distintos tipos de usuarios.
 
-Durante los siguientes tres años, me hice responsable de todo ello. Para cuando dejé la empresa, construí y mantuve:
-
-- Tres aplicaciones en producción
-- Un sistema de diseño compartido
-- Infraestructura de despliegues
-- Internacionalización
-- Analíticas y regulación GDPR
-- Un modelo de permisos que abarca múltiples tipos de usuarios
-
-En retrospectiva, la lección más importante que saqué tiene muy poco que ver con React, Next.js o TypeScript. Es acerca de las decisiones de ingeniería que permitieron a una sola persona continuar sacando nuevas features sin ahogarse en complejidad.
+Mirando atrás, la lección más importante que me llevo de esos años tiene poco que ver con React, Next.js o TypeScript. Lo que más impacto tuvo en mi día a día fueron las decisiones que permitieron que una sola persona siguiera desarrollando nuevas funcionalidades sin que cada cambio resultara más caro que el anterior.
 
 ## El reto real
 
-La parte más complicada no era escribir código razonable, si no evitar que la plataforma se volviese más complicada de desarrollar mes a mes. Cada feature añadía nuevos flujos de trabajo, cada uno de ellos casos de riesgo y cada caso de riesgo más costes de mantenimiento.
+Es fácil pensar que el trabajo consiste principalmente en escribir código, pero en proyectos que crecen durante años el problema suele ser otro. Cada nueva funcionalidad introduce nuevos estados, nuevas excepciones y nuevas dependencias entre partes del sistema que antes estaban aisladas. Al principio apenas se nota, pero meses después empiezas a encontrarte con tareas aparentemente simples que requieren modificaciones en varios lugares distintos y despliegues que generan más incertidumbre de la que deberían.
 
-Sin un equipo frontend en el que poder respaldarme, no podía permitirme soluciones que funcionaran hoy pero crearan problemas seis meses más tarde y esa limitación dio forma a casi todas las decisiones arquitectónicas que tomé.
+Como no tenía un equipo frontend detrás con el que repartir responsabilidades, muchas decisiones acababan pasando por el filtro de una pregunta bastante simple: ¿seguiré queriendo mantener esto dentro de seis meses?
+
+Esa limitación terminó condicionando gran parte de la arquitectura.
 
 ## Por qué un monorepo
 
-Desde el principio era claro que la plataforma iba a ser usada por usuarios muy distintos. La solución obvia era separar aplicaciones en diferentes codebases, pero el problema es que los conceptos básicos de producto eran idénticos. Los proyectos eran proyectos, los usuarios eran usuarios y los permisos eran permisos.
+Desde muy pronto quedó claro que la plataforma acabaría teniendo varias aplicaciones. Los clientes, los profesionales y el equipo interno trabajaban con necesidades diferentes y cada uno requería interfaces específicas.
 
-Cada componente duplicado necesitaría ser mantenido en múltiples ocasiones y cada cambio en un flujo de trabajo tendría que ser implementado varias veces.
+La alternativa más obvia era separar cada aplicación en su propio repositorio, pero había un problema: aunque las interfaces fueran distintas, el dominio era prácticamente el mismo. Los proyectos seguían siendo proyectos, los usuarios seguían siendo usuarios y las reglas de permisos afectaban a todos los productos por igual.
 
-Como desarrollador único, eso no era algo que me pudiera permitir. El monorepo no fue una preferencia técnica, fue una estrategia de supervivencia.
+Cada vez que se modificaba un flujo de negocio importante, el cambio terminaba impactando en varias aplicaciones. Mantener repositorios independientes habría supuesto duplicar componentes, tipos, modelos de dominio y parte de la lógica de negocio. Para una organización grande quizá no habría sido especialmente problemático. Para una sola persona sí.
 
-## El mayor reto es lógica de negocio
+Por eso el monorepo nunca fue una preferencia tecnológica. Fue una decisión práctica para reducir duplicación y mantener una única fuente de verdad para los conceptos más importantes del producto.
 
-El código más complejo que escribí no era de UI, si no lógica de flujos. La producción de contenido suena bastante simple cuando la describes en una sola frase:
+## Donde realmente estaba la complejidad
 
-"*Un cliente solicita fotos, el fotógrafo toma las fotos, el editor las edita y el cliente revisa el resultado final.*"
+Curiosamente, el código más difícil de mantener no era el de la interfaz.
 
-Pero en realidad, cada paso depende de otros pasos. Los editores no pueden editar fotos que no han sido subidas. Los clientes no pueden aprobar contenido que no ha sido entregado y los colaboradores no pueden acceder a proyectos que no tienen asignados.
+Cuando explicas el producto en una conversación, todo parece razonable: un cliente solicita contenido, los profesionales realizan el trabajo y el cliente aprueba el resultado final. El problema es que los sistemas reales rara vez funcionan con reglas tan simples.
 
-Para cuando múltiples roles de usuario, estados de proyecto y tipos de servicio entraron en juego, la complejidad creció rápidamente. La mayoría de bugs no eran visuales, si no reglas de negocio que no se habían definido correctamente.
+Un editor no puede trabajar sobre archivos que todavía no se han subido. Un cliente no debería aprobar contenido que aún no se ha entregado. Los profesionales solo pueden acceder a proyectos concretos. Algunos servicios requieren varios profesionales trabajando en distintas fases. Otros permiten revisiones, entregas parciales o flujos específicos según el tipo de producción.
 
-## Qué haría diferente
+La mayoría de errores relevantes no estaban relacionados con botones, formularios o estilos visuales. Solían aparecer cuando alguna regla de negocio no contemplaba correctamente un caso concreto o cuando dos partes del sistema interpretaban el mismo proceso de manera diferente.
 
-No todas las decisiones salieron bien. Algunos paquetes se volvieron demasiado grandes, algunas responsabilidades se delinearon mal. Esperamos demasiado tiempo en invertir en Storybook, nunca llegamos a establecer una estrategia de testing end-to-end y documentamos más casos de implementación que decisiones de arquitectura.
+Con el tiempo entendí que buena parte del trabajo consistía en modelar correctamente esas reglas y asegurar que se aplicaran de forma consistente en toda la plataforma.
 
-Ninguno de estos problemas fue catastrófico, pero cobraron factura a lo largo del tiempo. Es uno de los temas recurrentes en la ingeniería de software: pocas decisiones fallan inmediatamente y en su lugar acumular interés que tendrás que pagar en algún punto.
+## Lo que haría diferente
 
-## Lo que me enseñaron esos tres años
+No todas las decisiones salieron bien.
 
-Tras tres años, mi mayor moraleja es que la arquitectura en realidad trata de mantener un buen ritmo. Las mejores decisiones técnicas no eran las más sofisticadas, si no las que redujeron trabajo de cara al futuro.
+Algunos paquetes crecieron más de lo que deberían. Algunas responsabilidades quedaron mal delimitadas y tardamos demasiado en invertir en herramientas que habrían mejorado la experiencia de desarrollo. Storybook llegó más tarde de lo ideal y nunca terminamos de establecer una estrategia sólida de testing end-to-end.
 
-Como ingenieros, a menudo nos centramos en lo que construimos pero con más experiencia, ahora me centro más en lo que no tengo que reconstruir. Ahí es donde puedes conseguir una ventaja contra el tiempo.
+Tampoco fuimos especialmente buenos documentando decisiones arquitectónicas. Había bastante documentación sobre cómo funcionaban determinadas implementaciones, pero mucha menos sobre por qué se habían tomado ciertas decisiones. Con el paso del tiempo, esa información suele ser más valiosa que los detalles de implementación.
 
-Y cuando eres el único ingeniero frontend manteniendo toda una plataforma, esas ventajas se convierten en uno de los salvavidas más importantes que puedes tener.
+Ninguno de estos problemas fue especialmente grave por sí mismo. Lo interesante es que casi todos compartían la misma característica: no generaban consecuencias inmediatas. Simplemente hacían que el desarrollo fuera un poco más lento, un poco más difícil o un poco más costoso cada mes.
+
+## Lo que me enseñaron estos tres años
+
+Después de tres años, mi conclusión es que la arquitectura tiene menos que ver con sofisticación técnica de lo que solemos pensar.
+
+Las decisiones más valiosas no fueron las más ingeniosas ni las más complejas. Fueron las que consiguieron mantener un ritmo de desarrollo razonable a medida que el producto crecía.
+
+Con el tiempo he dejado de fijarme tanto en cuánto trabajo me ahorra una decisión hoy y he empezado a prestar más atención a cuánto trabajo me evitará dentro de un año. En proyectos de larga duración, esa diferencia acaba siendo enorme.
+
+Cuando eres la única persona manteniendo gran parte de una plataforma, la capacidad de seguir avanzando sin que la complejidad te frene deja de ser una ventaja. Se convierte en una necesidad.

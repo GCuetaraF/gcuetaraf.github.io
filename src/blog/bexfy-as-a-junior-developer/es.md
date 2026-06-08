@@ -1,5 +1,5 @@
 ---
-title: Bexfy - Aprendiendo a construir soluciones multiplataforma como desarrollador junior
+title: Bexfy - Lo que mi primer trabajo me enseñó sobre software
 date: 2023-11-05
 tags: ["web-dev", "software-dev"]
 description: Reflexiones sobre heredar y extender un sistema de señalización digital multiplataforma en web, móvil e interfaces táctiles como mi primer rol profesional.
@@ -9,42 +9,42 @@ thumb:
 
 Bexfy fue mi primer trabajo como desarrollador.
 
-Como la mayoría de desarrolladores júnior, llegué esperando un equipo de séniors donde podría ser mentorizado y aprender a la vez que vas implementando pequeñas features. En su lugar, heredé tres aplicaciones existentes que ya estaban funcionando en producción.
+Entré con una expectativa bastante típica para alguien que empieza. Pensaba que iba a trabajar con gente más senior, recibir tareas pequeñas al principio y aprender el producto poco a poco mientras iba ganando confianza. En su lugar, lo que encontré fue un entorno donde ya existían tres aplicaciones en producción y donde mi trabajo consistía directamente en mantenerlas y evolucionarlas.
 
-- Un dashboard en Angular para adminsitradores.
-- Un reproductor multimedia multi-plataforma.
-- Una aplicación React para pantallas táctiles.
+Había un dashboard en Angular para administradores, un reproductor multimedia multiplataforma y una aplicación en React para pantallas táctiles. Cada una tenía usuarios reales, decisiones acumuladas durante años y un nivel de complejidad que no era evidente cuando mirabas el código por primera vez. Además, gran parte de esas decisiones no estaban documentadas y algunas habían sido tomadas por personas que ya no estaban en la empresa.
 
-Cada aplicación tenía usuarios reales, requisitos de producto, y años de decisiones tomadas por desarrolladores que ya no estaban disponibles para explicarlas.
+Con el tiempo entendí que esa era la parte más importante del trabajo. No tanto construir cosas nuevas, sino aprender a moverte dentro de sistemas que ya existen sin romperlos.
 
-Este trabajo me echó a las brasas desde el momento que pisé las oficinas y me enseñó una lección que llevo conmigo hasta este día: la mayoría del desarrollo de software no trata de crear sistemas, trata de entender sistemas que ya existen.
+## Leer antes de tocar nada
 
-## Lee antes de escribir
+Al principio tenía una urgencia bastante típica de alguien que empieza. Quería avanzar rápido, cerrar tareas, sentir que estaba aportando. Es fácil caer en la idea de que el progreso en software consiste en escribir código lo más rápido posible y entregar funcionalidades.
 
-Como desarrollador júnior todavía no has desarrollado tu sentido de la urgencia. El tiempo es el motivador tras todas las decisiones: quieres sacar nuevas features lo más pronto posible, quieres tener listos la mayoría de entregables para cada review, y los equipos que tratan con clientes piden más rapidez.
+Pero trabajar sobre sistemas ya en producción te obliga a cambiar ese ritmo. Cada cambio tiene contexto detrás. A veces es una decisión técnica, otras veces una limitación del producto o simplemente una solución temporal que nunca se sustituyó. El problema es que ese contexto no siempre está escrito en ningún sitio.
 
-Pero pronto aprendí que el código en producción conlleva una historia. La manera más rápida de romper un sistema es cambiar algo que no entiendes del todo, y eso es más verdad cuando no hay nadie alrededor para explicar las decisiones téncicas o de negocio que llevan a una implementación específica.
+Recuerdo que al principio tendía a modificar cosas demasiado rápido. Veía una pieza de código que no entendía del todo y asumía que estaba mal o que se podía simplificar. Con el tiempo aprendí que esa es una de las formas más fáciles de introducir errores en sistemas que no conoces bien.
 
-Entonces cada vez que tenía una tarea nueva, me dediqué a buscar features similares primero; antes de refactorizar, aprendí a analizar por qué el código actual era como era.
+Empecé a cambiar mi forma de trabajar. Antes de tocar nada intentaba encontrar partes del sistema que se comportaran de forma parecida. Seguía los flujos completos en lugar de mirar funciones aisladas. Y antes de refactorizar algo, intentaba entender qué problema original estaba resolviendo esa implementación, aunque fuera incómodo o lento.
 
-## El reproductor multimedia cambió cómo pienso acerca de software
+No siempre era posible llegar a una respuesta clara, pero el simple hecho de invertir más tiempo en entender el sistema antes de cambiarlo redujo muchos errores que habría cometido al principio.
 
-El proyecto más valioso (y doloroso) en el que trabajé es el reproductor multimedia de Bexfy.
+## El reproductor multimedia y la fiabilidad
 
-La tarea parecía simple: Descargar contenido, almacenarlo localmente y reproducirlo en una pantalla.
+El proyecto que más me marcó en esa etapa fue el reproductor multimedia.
 
-En realidad, operaba en entornos en los que los desarrolladores rara vez piensan: comercios con internet inestable, dispositivos que se reiniciar de improvviso, descargas corrompidas, hardware mal configurado o localizaciones donde nadie del departamente de IT puede visitar físicamente.
+En teoría era una aplicación bastante directa. Descargaba contenido, lo almacenaba localmente y lo reproducía en una pantalla. Nada especialmente complicado si lo miras desde una perspectiva puramente de software web.
 
-El reproductor me enseñó la importancia de la fiabilidad. Cuando una aplicación web crashea, el usuario puede simplemente refrescar la página pero cuando un reproductor de cartelería digitar falla, toda la pantalla se apaga y los clientes y encargados de tienda se dan cuenta rápido.
+Pero el contexto era completamente distinto. Estos dispositivos se instalaban en comercios, con conexiones a internet inestables, hardware poco controlado y entornos donde nadie del equipo técnico podía intervenir fácilmente. A veces se reiniciaban sin aviso. Otras veces perdían conexión durante horas. En algunos casos el almacenamiento se llenaba o las descargas se quedaban a medias sin que nadie lo notara inmediatamente.
 
-De esta forma aprendí a nunca pensar que el camino feliz es el único camino. ¿Qué sucede si una descarga se interrumpe a medias? ¿Qué pasa si el almacenamiento está lleno? ¿Qué ocurre si el dispositivo pierde la conexión durante horas?
+Empecé a darme cuenta de que muchas de las cosas que damos por hechas en aplicaciones web normales no aplicaban aquí. Si algo fallaba en una web, el usuario podía refrescar la página o volver a intentar la acción. En este caso no había esa red de seguridad. Si el reproductor fallaba, la pantalla dejaba de mostrar contenido y el problema era visible de inmediato para cualquiera que pasara por delante.
 
-El objetivo principal del reproductor multimedia fue crear una aplicación que reaccionara de forma elegante siempre que hubiera algún fallo.
+A partir de ahí empecé a pensar menos en el camino feliz y más en los fallos. Qué pasa si una descarga se interrumpe. Qué pasa si el archivo queda corrupto. Qué ocurre si el dispositivo se queda sin espacio. Qué debería hacer la aplicación si no puede actualizar contenido durante horas.
 
-## En retrospectiva
+El objetivo dejó de ser simplemente que el sistema funcionara cuando todo iba bien. Pasó a ser que el sistema siguiera comportándose de forma razonable incluso cuando algo inevitablemente fallaba.
 
-Cuando me uní a Bexfy, pensé que lo más importante a desarrollar era el conocimiento de nuevas tecnologías y escribir código de calidad. Me dediqué a aprender Angular, React, Cordova, servicios de AWS y pipelines de despliegue. Y aunque esos conocimientos fueron importantes, no fueron lo más valioso que aprendí.
+## Lo que me quedó de aquella etapa
 
-La lección de verdad fue aprender a trabajar con sistemas existentes, leer código con el que no estaba familiarizado, entender decisiones de otros desarrolladores y cómo hacer cambios sin añadir riesgos innecesarios.
+Cuando entré en Bexfy pensaba que lo más importante sería aprender tecnologías nuevas y escribir mejor código. Y en parte fue así. Trabajé con Angular, React, Cordova, servicios de AWS y pipelines de despliegue que no había visto antes, pero con el tiempo me di cuenta de que eso no era lo que más valor me aportó a largo plazo.
 
-Estas lecciones fueron más difícies de aprender que cualquier tecnología, y también son las que más han recurrido a lo largo de mi carrera.
+Lo más importante fue aprender a trabajar dentro de sistemas existentes. Aprender a leer código que no habías escrito tú sin intentar cambiarlo demasiado rápido. Aprender a reconocer que muchas decisiones tienen historia detrás, aunque no esté documentada. Y aprender que gran parte del trabajo de un desarrollador no consiste en construir sistemas nuevos, sino en mantener sistemas que ya existen sin introducir problemas adicionales.
+
+Esas lecciones no fueron inmediatas ni cómodas, pero son las que más han influido en cómo trabajo hoy en día.
