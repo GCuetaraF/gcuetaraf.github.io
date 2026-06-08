@@ -32,6 +32,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
+/* Selection styles */
+::selection {
+  background: color-mix(in srgb, var(--color-secondary) 60%, transparent);
+  color: var(--color-text-primary);
+  text-shadow: none;
+}
+
+::-moz-selection {
+  background: color-mix(in srgb, var(--color-secondary) 60%, transparent);
+  color: var(--color-text-primary);
+  text-shadow: none;
+}
+
 /* Typography */
 h1,
 h2,
