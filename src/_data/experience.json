@@ -26,7 +26,7 @@
       "Node.js"
     ],
     "description": {
-      "en": "Owned frontend architecture for a content production platform connecting clients with creative freelancers. Built modular Next.js web app and React Native companion, establishing design system and CI/CD pipelines.",
+      "en": "Owned frontend architecture for a content production platform connecting clients with creative freelancers. Built modular Next.js web apps, establishing design system and CI/CD pipelines.",
       "es": "Responsable de la arquitectura frontend de una plataforma de producción de contenido que conecta clientes con freelancers creativos. Construí las apps web en Next.js, estableciendo design system y pipelines CI/CD."
     },
     "highlights": {
@@ -61,7 +61,11 @@
       "en": "1 year 11 months",
       "es": "1 año 11 meses"
     },
-    "technologies": ["React Native", "React.js", "TypeScript"],
+    "technologies": [
+      "React Native",
+      "React.js",
+      "TypeScript"
+    ],
     "description": {
       "en": "Developed mobile and web applications across multiple client engagements in healthcare and e-commerce. Drove performance optimization and technical debt reduction under tight consulting deadlines.",
       "es": "Desarrollé aplicaciones móviles y web en múltiples proyectos de consultoría en salud y e-commerce. Impulsé la optimización de rendimiento y reducción de deuda técnica bajo plazos ajustados."
@@ -98,7 +102,12 @@
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
     },
-    "technologies": ["React.js", "React Native", "Angular", "Cordova"],
+    "technologies": [
+      "React.js",
+      "React Native",
+      "Angular",
+      "Cordova"
+    ],
     "description": {
       "en": "Built a cross-platform digital signage system spanning web, mobile, and touch interfaces for retail environments. Grew from junior to owning full feature delivery across audio, video, and scent modules.",
       "es": "Construí un sistema de señalización digital multiplataforma que abarca web, móvil e interfaces táctiles para entornos retail. Lideré la entrega completa de funcionalidades en módulos de audio, vídeo y aromas."

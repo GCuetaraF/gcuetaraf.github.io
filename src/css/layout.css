@@ -32,8 +32,9 @@
 .btn {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.875rem 1.75rem;
   border-radius: var(--radius-full);
   font-family: var(--font-mono);
   font-size: var(--font-size-xs);
@@ -41,9 +42,19 @@
   letter-spacing: var(--tracking-wide);
   font-weight: var(--font-weight-medium);
   text-decoration: none;
-  transition: background-color var(--transition-base), color var(--transition-base);
+  transition:
+    background-color var(--transition-base),
+    color var(--transition-base);
   cursor: pointer;
   border: none;
+  min-height: 2.75rem;
+}
+
+@media (min-width: 640px) {
+  .btn {
+    padding: 0.75rem 1.5rem;
+    min-height: auto;
+  }
 }
 
 .btn--primary {
@@ -172,7 +183,9 @@
   padding: 0.25rem 0.5rem;
   border-radius: var(--radius-lg);
   color: var(--color-text-muted);
-  transition: color var(--transition-base), background-color var(--transition-base);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
   cursor: pointer;
   background: none;
   border: none;
@@ -205,7 +218,9 @@
   border-radius: var(--radius-full);
   color: var(--color-text-muted);
   cursor: pointer;
-  transition: color var(--transition-base), background-color var(--transition-base);
+  transition:
+    color var(--transition-base),
+    background-color var(--transition-base);
 }
 
 .theme-toggle:hover {
@@ -358,7 +373,9 @@
   letter-spacing: var(--tracking-wide);
   color: var(--color-text-secondary);
   cursor: pointer;
-  transition: border-color var(--transition-base), color var(--transition-base);
+  transition:
+    border-color var(--transition-base),
+    color var(--transition-base);
 }
 
 .copy-btn:hover {
