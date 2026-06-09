@@ -1,8 +1,8 @@
 ---
-title: Plexus Tech - Consulting, Technical Debt, and Mobile Development
+title: "Consulting, Technical Debt, and the Reality of Mobile Dev"
 date: 2024-03-22
-tags: ["web-dev", "mobile-dev"]
-description: Lessons learned working as a mobile developer in a consulting environment, managing legacy codebases, and balancing client demands with technical sustainability.
+tags: ["react-native", "consulting", "technical-debt"]
+description: Lessons from working as a mobile developer in consulting — managing legacy codebases and balancing client demands with technical sustainability.
 thumb:
   base: https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg
 ---

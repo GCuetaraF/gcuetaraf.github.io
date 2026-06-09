@@ -1,8 +1,8 @@
 ---
-title: Aplicando arquitectura de autenticación
+title: "Implementando permisos ABAC en un frontend React"
 date: 2025-09-13
-tags: ["web-dev"]
-description: Para escalar los permisos de acceso de usuarios basados en rol y atributos, implementamos permisos ABAC en nuestra aplicación front-end.
+tags: ["auth", "abac", "architecture"]
+description: Implementando control de acceso basado en atributos en un frontend React — patrones, trampas y la arquitectura detrás de permisos por rol y atributo.
 thumb:
   base: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop
 ---

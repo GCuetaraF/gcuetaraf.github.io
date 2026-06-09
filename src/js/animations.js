@@ -1,138 +1,11 @@
-const observerOptions = {
-  threshold: 0.1,
-  rootMargin: "0px 0px -50px 0px",
-};
+/* ============================================
+   MINIMAL INTERACTIONS
+   Smooth scroll + scroll-triggered reveal animations.
+   All visual motion is handled by CSS transitions.
+   Respects prefers-reduced-motion.
+   ============================================ */
 
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add("animate-in");
-      observer.unobserve(entry.target);
-    }
-  });
-}, observerOptions);
-
-document.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll(".animate-on-scroll").forEach((el) => {
-    observer.observe(el);
-  });
-
-  initMagneticButtons();
-
-  initCursorGlow();
-
-  initFloatingSymbols();
-
-  initStaggeredAnimations();
-});
-
-function throttle(func, delay) {
-  let lastCall = 0;
-  return function (...args) {
-    const now = Date.now();
-    if (now - lastCall >= delay) {
-      lastCall = now;
-      func.apply(this, args);
-    }
-  };
-}
-
-function initMagneticButtons() {
-  const buttons = document.querySelectorAll(".btn, .social-link");
-
-  buttons.forEach((button) => {
-    const handleMouseMove = throttle((e) => {
-      const rect = button.getBoundingClientRect();
-      const x = e.clientX - rect.left - rect.width / 2;
-      const y = e.clientY - rect.top - rect.height / 2;
-
-      const distance = Math.sqrt(x * x + y * y);
-      const maxDistance = Math.max(rect.width, rect.height) / 2;
-
-      if (distance < maxDistance * 1.5) {
-        const moveX = (x / maxDistance) * 10;
-        const moveY = (y / maxDistance) * 10;
-        button.style.transform = `translate(${moveX}px, ${moveY}px)`;
-      }
-    }, 16); // ~60fps
-
-    button.addEventListener("mousemove", handleMouseMove, { passive: true });
-
-    button.addEventListener(
-      "mouseleave",
-      () => {
-        button.style.transform = "";
-      },
-      { passive: true },
-    );
-  });
-}
-
-function initCursorGlow() {
-  const cursorGlow = document.createElement("div");
-  cursorGlow.className = "cursor-glow";
-  document.body.appendChild(cursorGlow);
-
-  let mouseX = 0,
-    mouseY = 0;
-  let glowX = 0,
-    glowY = 0;
-  let animationId = null;
-
-  const handleMouseMove = throttle((e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-  }, 16);
-
-  document.addEventListener("mousemove", handleMouseMove, { passive: true });
-
-  function animateGlow() {
-    const dx = mouseX - glowX;
-    const dy = mouseY - glowY;
-
-    if (Math.abs(dx) < 0.1 && Math.abs(dy) < 0.1) {
-      animationId = requestAnimationFrame(animateGlow);
-      return;
-    }
-
-    glowX += dx * 0.1;
-    glowY += dy * 0.1;
-
-    cursorGlow.style.transform = `translate(${glowX - 200}px, ${glowY - 200}px)`;
-
-    animationId = requestAnimationFrame(animateGlow);
-  }
-
-  animateGlow();
-}
-
-function initFloatingSymbols() {
-  const hero = document.querySelector(".hero");
-  if (!hero) return;
-
-  const symbols = ["</", "/>", "{", "}", "( )", "[ ]", "=>", "< >"];
-  const colors = ["var(--color-primary)", "var(--color-secondary)", "var(--color-accent)"];
-
-  for (let i = 0; i < 15; i++) {
-    const symbol = document.createElement("div");
-    symbol.className = "floating-symbol";
-    symbol.textContent = symbols[Math.floor(Math.random() * symbols.length)];
-    symbol.style.left = Math.random() * 100 + "%";
-    symbol.style.top = Math.random() * 100 + "%";
-    symbol.style.color = colors[Math.floor(Math.random() * colors.length)];
-    symbol.style.animationDelay = Math.random() * 5 + "s";
-    symbol.style.animationDuration = 10 + Math.random() * 10 + "s";
-    hero.appendChild(symbol);
-  }
-}
-
-function initStaggeredAnimations() {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card, index) => {
-    card.style.animationDelay = `${index * 0.1}s`;
-  });
-}
-
+// Smooth scroll for anchor navigation
 document.addEventListener(
   "click",
   (e) => {
@@ -144,43 +17,47 @@ document.addEventListener(
       if (element) {
         element.scrollIntoView({
           behavior: "smooth",
-          block: "center",
+          block: "start",
         });
-
-        if (element.classList.contains("project-card")) {
-          const highlightedCards = document.querySelectorAll(".project-card.highlight");
-          highlightedCards.forEach((card) => {
-            card.classList.remove("highlight");
-          });
-
-          element.classList.add("highlight");
-
-          setTimeout(() => {
-            element.classList.remove("highlight");
-          }, 2000);
-        }
       }
     }
   },
   { passive: false },
 );
 
-document.addEventListener("click", (e) => {
-  const button = e.target.closest(".btn");
-  if (button) {
-    const ripple = document.createElement("span");
-    ripple.className = "ripple";
-    const rect = button.getBoundingClientRect();
-    const size = Math.max(rect.width, rect.height);
-    const x = e.clientX - rect.left - size / 2;
-    const y = e.clientY - rect.top - size / 2;
+// Scroll-triggered fade-in animations
+(function () {
+  // Respect reduced motion preference
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)",
+  ).matches;
+  if (prefersReducedMotion) return;
 
-    ripple.style.width = ripple.style.height = size + "px";
-    ripple.style.left = x + "px";
-    ripple.style.top = y + "px";
+  const revealElements = document.querySelectorAll(
+    ".section, .project-featured, .project-card, .experience-card, .article-row, .testimonial-card",
+  );
 
-    button.appendChild(ripple);
+  if (!revealElements.length) return;
 
-    setTimeout(() => ripple.remove(), 600);
-  }
-});
+  // Add initial hidden state
+  revealElements.forEach((el) => {
+    el.classList.add("reveal");
+  });
+
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("reveal--visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    },
+    {
+      threshold: 0.1,
+      rootMargin: "0px 0px -50px 0px",
+    },
+  );
+
+  revealElements.forEach((el) => observer.observe(el));
+})();

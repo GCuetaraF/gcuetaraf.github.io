@@ -1,8 +1,8 @@
 ---
-title: Bexfy - Lo que mi primer trabajo me enseñó sobre software
+title: "Lo que mi primer trabajo me enseñó sobre construir software"
 date: 2023-11-05
-tags: ["web-dev", "software-dev"]
-description: Reflexiones sobre heredar y extender un sistema de señalización digital multiplataforma en web, móvil e interfaces táctiles como mi primer rol profesional.
+tags: ["first-job", "cross-platform", "growth"]
+description: Reflexiones sobre heredar un sistema de señalización digital multiplataforma y crecer de junior a liderar la entrega de funcionalidades en web, móvil y táctil.
 thumb:
   base: https://images.pexels.com/photos/1827234/pexels-photo-1827234.jpeg
 ---

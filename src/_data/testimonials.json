@@ -1,0 +1,17 @@
+[
+  {
+    "quote": {
+      "en": "Your testimonial text here.",
+      "es": "Tu texto de testimonio aquí."
+    },
+    "author": "Name Surname",
+    "role": {
+      "en": "Job Title at Company",
+      "es": "Puesto en Empresa"
+    },
+    "relationship": {
+      "en": "Worked together at Company",
+      "es": "Trabajamos juntos en Empresa"
+    }
+  }
+]

@@ -1,8 +1,8 @@
 ---
-title: Cómo construí mi rastreador multimedia
+title: "Construyendo un rastreador multimedia personal desde cero"
 date: 2026-02-22
-tags: ["web-dev", "media"]
-description: Para gestionar todos los contenidos con los que interactúo, creé un sistema administrado que rastrea y almacena la información en una base de datos externa que luego puedo consumir en cualquiera de mis aplicaciones.
+tags: ["side-project", "api-design", "node"]
+description: Un proyecto fullstack para rastrear películas, series y libros — desde el diseño de API hasta un frontend en React con sincronización de base de datos externa.
 thumb:
   base: https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&h=450&fit=crop
 ---

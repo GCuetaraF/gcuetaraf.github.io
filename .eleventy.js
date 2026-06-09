@@ -1,3 +1,5 @@
+import { feedPlugin } from "@11ty/eleventy-plugin-rss";
+
 export default async function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("./src/css");
   eleventyConfig.addPassthroughCopy("./src/js");
@@ -6,6 +8,34 @@ export default async function (eleventyConfig) {
 
   eleventyConfig.addWatchTarget("./src/css");
   eleventyConfig.addWatchTarget("./src/js");
+
+  // RSS Feed plugin
+  eleventyConfig.addPlugin(feedPlugin, {
+    type: "atom",
+    outputPath: "/feed.xml",
+    collection: {
+      name: "blogEn",
+      limit: 20,
+    },
+    metadata: {
+      language: "en",
+      title: "Gabriel Cuétara — Articles",
+      subtitle: "Writing about architecture, front-end engineering, and lessons from building products.",
+      base: "https://gcuetaraf.github.io",
+      author: {
+        name: "Gabriel Cuétara",
+        email: "garycuetara@gmail.com",
+      },
+    },
+  });
+
+  // Format YYYY-MM dates for experience section
+  eleventyConfig.addFilter("formatDate", (dateStr) => {
+    if (!dateStr) return "";
+    const [year, month] = dateStr.split("-");
+    const date = new Date(year, month - 1);
+    return date.toLocaleDateString("en-US", { year: "numeric", month: "short" });
+  });
 
   // Date filter for blog posts
   eleventyConfig.addFilter("readableDate", (dateObj) => {

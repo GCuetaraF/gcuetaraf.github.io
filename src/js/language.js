@@ -18,9 +18,10 @@ function cacheLanguageElements() {
   cachedElements = {
     textElements: document.querySelectorAll("[data-lang-en], [data-lang-es]"),
     htmlElements: document.querySelectorAll("[data-html-lang-en], [data-html-lang-es]"),
+    hrefElements: document.querySelectorAll("[data-lang-en-href], [data-lang-es-href]"),
     langButtons: document.querySelectorAll(".lang-btn"),
     langElements: Array.from(document.querySelectorAll("[lang]")).filter((el) => el !== document.documentElement),
-    blogCards: document.querySelectorAll(".blog-card[data-lang]"),
+    blogCards: document.querySelectorAll(".article-row[data-lang]"),
   };
 
   return cachedElements;
@@ -46,6 +47,13 @@ function updateLanguage(lang) {
       const content = el.getAttribute(`data-html-lang-${lang}`);
       if (content) {
         el.innerHTML = content;
+      }
+    });
+
+    elements.hrefElements.forEach((el) => {
+      const href = el.getAttribute(`data-lang-${lang}-href`);
+      if (href) {
+        el.setAttribute("href", href);
       }
     });
 
@@ -93,32 +101,23 @@ function updateLanguageWithTransition(lang) {
 
 updateLanguage(currentLang);
 
-document.addEventListener("DOMContentLoaded", () => {
-  const languageSwitcher = document.getElementById("languageSwitcher");
+function attachLanguageListeners() {
+  const langToggle = document.querySelector(".lang-toggle");
 
-  if (languageSwitcher) {
-    languageSwitcher.addEventListener("click", (e) => {
-      if (e.target.classList.contains("lang-btn")) {
-        const newLang = e.target.dataset.lang;
+  if (langToggle) {
+    langToggle.addEventListener("click", (e) => {
+      const btn = e.target.closest(".lang-btn");
+      if (btn) {
+        const newLang = btn.dataset.lang;
         updateLanguageWithTransition(newLang);
       }
     });
   }
+}
 
-  // CV Download button functionality
-  const downloadCvBtn = document.getElementById("downloadCvBtn");
-  if (downloadCvBtn) {
-    downloadCvBtn.addEventListener("click", () => {
-      const cvFile = currentLang === "es" ? "curriculum-es.pdf" : "curriculum-en.pdf";
-      const cvPath = `/assets/${cvFile}`;
-
-      // Create a temporary link and trigger download
-      const link = document.createElement("a");
-      link.href = cvPath;
-      link.download = cvFile;
-      document.body.appendChild(link);
-      link.click();
-      document.body.removeChild(link);
-    });
-  }
-});
+// Attach listeners whether DOMContentLoaded has fired or not
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", attachLanguageListeners);
+} else {
+  attachLanguageListeners();
+}

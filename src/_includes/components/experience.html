@@ -1,68 +1,58 @@
-<!-- Experience Section -->
-<section class="experience section" id="experience">
-  <div class="container">
-    <h2 class="experience__title animate-on-scroll">
-      <span data-lang-en="{{ translations.en.experience.title }}" data-lang-es="{{ translations.es.experience.title }}">{{ translations.en.experience.title }}</span>
-    </h2>
+<section class="experience" id="experiencia">
+  <div class="experience__inner">
+    <div class="experience__header">
+      <h2 class="experience__title">
+        <span data-lang-en="{{ translations.en.experience.title }}" data-lang-es="{{ translations.es.experience.title }}">{{ translations.en.experience.title }}</span>
+      </h2>
+      <span class="section-label">
+        <span data-lang-en="(02) — Career" data-lang-es="(02) — Trayectoria">(02) — Career</span>
+      </span>
+    </div>
 
-    <div class="timeline">
+    <div class="experience__grid">
       {% for job in experience %}
-        <div class="timeline__item animate-on-scroll">
-          <div class="timeline__marker"></div>
-          <div class="timeline__content">
-            <div class="job-card">
-              <div class="job-card__header">
-                <div>
-                  <h3 class="job-card__position">
-                    {% if job.link %}
-                      <a href="{{ job.link }}">
-                        <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
-                      </a>
-                    {% else %}
-                      <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
-                    {% endif %}
-                  </h3>
-                  <p class="job-card__company">{{ job.company }}</p>
-                </div>
-                <div class="job-card__meta">
-                  <span class="job-card__type">
-                    <span data-lang-en="{{ job.type.en }}" data-lang-es="{{ job.type.es }}">{{ job.type.en }}</span>
-                  </span>
-                  {% if job.remote %}
-                    <span class="job-card__remote">
-                      <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"></path>
-                        <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"></path>
-                        <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"></path>
-                        <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"></path>
-                      </svg>
-                      <span data-lang-en="{{ translations.en.experience.remote }}" data-lang-es="{{ translations.es.experience.remote }}">{{ translations.en.experience.remote }}</span>
-                    </span>
-                  {% endif %}
-                </div>
-              </div>
+        <div class="job-card">
+          <span class="job-card__index">0{{ loop.index }}</span>
 
-              <div class="job-card__details">
-                <p class="job-card__location">{{ job.location }}</p>
-                <p class="job-card__duration">
-                  <span class="job-card__duration-text">
-                    <span data-lang-en="{{ job.duration.en }}" data-lang-es="{{ job.duration.es }}">{{ job.duration.en }}</span>
-                  </span>
-                </p>
-              </div>
+          <p class="job-card__period">
+            {{ job.startDate | formatDate }} —
+            {% if job.endDate %}
+              {{ job.endDate | formatDate }}
+            {% else %}
+              <span data-lang-en="{{ translations.en.experience.present }}" data-lang-es="{{ translations.es.experience.present }}">{{ translations.en.experience.present }}</span>
+            {% endif %}
+          </p>
 
-              {% if job.description %}
-                <p class="job-card__description">
-                  <span data-lang-en="{{ job.description.en }}" data-lang-es="{{ job.description.es }}">{{ job.description.en }}</span>
-                </p>
-              {% endif %}
+          <h3 class="job-card__position">
+            <span data-lang-en="{{ job.position.en }}" data-lang-es="{{ job.position.es }}">{{ job.position.en }}</span>
+          </h3>
 
-              <div class="job-card__tech">
-                {% for tech in job.technologies %}
-                  <span class="tech-tag">{{ tech }}</span>
-                {% endfor %}
-              </div>
-            </div>
+          {% if job.link %}
+            <a href="{{ job.link }}" class="job-card__company">{{ job.company }}</a>
+          {% else %}
+            <span class="job-card__company">{{ job.company }}</span>
+          {% endif %}
+
+          {% if job.description %}
+            <p class="job-card__description">
+              <span data-lang-en="{{ job.description.en }}" data-lang-es="{{ job.description.es }}">{{ job.description.en }}</span>
+            </p>
+          {% endif %}
+
+          {% if job.highlights %}
+            <ul class="job-card__highlights">
+              {% for highlight in job.highlights.en %}
+                <li class="job-card__highlight">
+                  <span data-lang-en="{{ job.highlights.en[loop.index0] }}" data-lang-es="{{ job.highlights.es[loop.index0] }}">{{ highlight }}</span>
+                </li>
+              {% endfor %}
+            </ul>
+          {% endif %}
+
+          <div class="job-card__tech">
+            {% for tech in job.technologies %}
+              <span class="tag">{{ tech }}</span>
+            {% endfor %}
           </div>
         </div>
       {% endfor %}

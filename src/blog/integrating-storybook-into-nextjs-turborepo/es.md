@@ -1,8 +1,8 @@
 ---
-title: Mis primeros pasos con Storybook
+title: "Integrando Storybook en un Turborepo con Next.js"
 date: 2025-08-23
-tags: ["web-dev"]
-description: Durante mucho tiempo quise profundizar mi conocimiento de Storybook, y gracias a una serie de necesidades en el trabajo finalmente tuve la oportunidad.
+tags: ["storybook", "design-systems", "dx"]
+description: Integrando Storybook en un monorepo Turborepo con Next.js — configuración, patrones de documentación de componentes y mejoras de DX.
 thumb:
   base: https://images.unsplash.com/photo-1576153192396-180ecef2a715?w=800&h=450&fit=crop
 ---

@@ -1,38 +1,40 @@
 ---
-layout: base.html
+css:
+  - /css/variables.css
+  - /css/base.css
+  - /css/layout.css
+  - /css/blog.css
 ---
 
 <!DOCTYPE html>
 <html lang="{{ lang or 'en' }}">
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }} - {{ site.name }}</title>
+    {% include "components/metadata.html" %}
 
-    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
-    <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+    {% for href in css %}
+      <link rel="stylesheet" href="{{ href | url }}">
+    {% endfor %}
 
-    <link rel="stylesheet" href="/css/variables.css">
-    <link rel="stylesheet" href="/css/base.css">
-    <link rel="stylesheet" href="/css/blog.css">
-
-    <!-- Prism styles with preload for faster rendering -->
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism-tomorrow.min.css" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css" as="style" crossorigin>
+    <!-- Prism code highlighting (light theme) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css" crossorigin>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css" crossorigin>
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.css" as="style" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.css" crossorigin>
     <link rel="stylesheet" href="/css/prism-custom.css">
   </head>
-  <body data-page-type="blog-post" data-blog-slug="{{ slug }}" data-blog-lang="{{ lang }}">
-    {% include "components/language-switcher.html" %}
+  <body>
+    <a href="#main" class="skip-link">Skip to content</a>
+    {% include "components/site-header.html" %}
 
-    <main class="blog-post">
+    <main id="main" class="blog-post">
       <div class="container">
         <article class="post">
           <header class="post__header">
-            <a href="/" class="back-link">← Back to Home</a>
+            <a href="/blog/" class="back-link">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5"/>
+                <path d="m12 19-7-7 7-7"/>
+              </svg>
+              <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
+            </a>
 
             <h1 class="post__title">{{ title }}</h1>
 
@@ -41,8 +43,8 @@ layout: base.html
                 {{ date | readableDate }}
               </time>
               <span class="post__reading-time">
-                {{ content | readingTime }} min read
-            </span>
+                {{ content | readingTime }} min
+              </span>
               {% if tags %}
                 <div class="post__tags">
                   {% for tag in tags %}
@@ -58,14 +60,25 @@ layout: base.html
           </div>
 
           <footer class="post__footer">
-            <a href="/blog/" class="btn btn--secondary">← View All Articles</a>
+            <a href="/blog/" class="btn btn--outline">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M19 12H5"/>
+                <path d="m12 19-7-7 7-7"/>
+              </svg>
+              <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
+            </a>
           </footer>
         </article>
       </div>
     </main>
 
-    <script src="/js/language.js" defer></script>
+    {% include "components/site-footer.html" %}
+    {% include "components/mobile-nav.html" %}
 
+    <script src="/js/language.js" defer></script>
+    <script src="/js/theme.js" defer></script>
+
+    <!-- Prism.js -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-typescript.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-javascript.min.js" defer></script>
@@ -77,45 +90,23 @@ layout: base.html
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-markdown.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-yaml.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js" defer></script>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/toolbar/prism-toolbar.min.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/normalize-whitespace/prism-normalize-whitespace.min.js" defer></script>
 
     <script>
-      // Add line-numbers class to all code blocks and handle metadata
       document.addEventListener('DOMContentLoaded', function () {
-        document
-          .querySelectorAll('pre code[class*="language-"]')
-          .forEach(function (code) {
-            const pre = code.parentElement;
-
-            // Extract language from class (handles cases like "language-ts#6 title="...")
-            const classMatch = code
-              .className
-              .match(/language-(\w+)/);
-            if (classMatch) {
-              const lang = classMatch[1];
-
-              // Clean up the code element's class
-              code.className = 'language-' + lang;
-
-              // Ensure pre has the correct language class
-              if (!pre.classList.contains('language-' + lang)) {
-                pre
-                  .classList
-                  .add('language-' + lang);
-              }
+        document.querySelectorAll('pre code[class*="language-"]').forEach(function (code) {
+          const pre = code.parentElement;
+          const classMatch = code.className.match(/language-(\w+)/);
+          if (classMatch) {
+            const lang = classMatch[1];
+            code.className = 'language-' + lang;
+            if (!pre.classList.contains('language-' + lang)) {
+              pre.classList.add('language-' + lang);
             }
-
-            // Add line-numbers class
-            pre
-              .classList
-              .add('line-numbers');
-          });
-
-        // Re-highlight after fixing classes
+          }
+          pre.classList.add('line-numbers');
+        });
         if (window.Prism) {
           Prism.highlightAll();
         }

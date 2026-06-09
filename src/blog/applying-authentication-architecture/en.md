@@ -1,9 +1,9 @@
 ---
-title: Applying authentication architecture
+title: "Implementing ABAC Permissions in a React Frontend"
 lang: en
 date: 2025-09-13
-tags: ["web-dev"]
-description: To scale user access permissions based on role and attribute, we implemented ABAC permissions into our front-end application.
+tags: ["auth", "abac", "architecture"]
+description: Implementing attribute-based access control in a React frontend — patterns, gotchas, and the architecture behind role and attribute permissions.
 thumb:
   base: https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&h=450&fit=crop
 ---

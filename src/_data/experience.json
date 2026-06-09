@@ -2,8 +2,8 @@
   {
     "company": "StoriMake",
     "position": {
-      "en": "Application Developer",
-      "es": "Desarrollador de aplicaciones"
+      "en": "Senior developer",
+      "es": "Desarrollador sénior"
     },
     "type": {
       "en": "Full-time",
@@ -21,22 +21,32 @@
     "technologies": [
       "Next.js",
       "React Native",
-      "Tailwind CSS",
       "TypeScript",
-      "React.js",
-      "Node.js",
-      "Express.js"
+      "Tailwind CSS",
+      "Node.js"
     ],
     "description": {
-      "en": "Developing a platform to automatize content creation with a modular team of freelancers specialized in creative work.",
-      "es": "Implementación de una plataforma para agilizar la producción de contenido con un equipo modular de freelancers especialistas en trabajo creativo."
+      "en": "Owned frontend architecture for a content production platform connecting clients with creative freelancers. Built modular Next.js web app and React Native companion, establishing design system and CI/CD pipelines.",
+      "es": "Responsable de la arquitectura frontend de una plataforma de producción de contenido que conecta clientes con freelancers creativos. Construí las apps web en Next.js, estableciendo design system y pipelines CI/CD."
+    },
+    "highlights": {
+      "en": [
+        "Turborepo monorepo: 3 apps + 6 shared packages",
+        "€90K+ processed payments, 2,900+ Stripe accounts",
+        "30+ businesses, 200+ freelance creators onboarded"
+      ],
+      "es": [
+        "Monorepo Turborepo: 3 apps + 6 paquetes compartidos",
+        "Más de 90K€ en pagos procesados, 2.900+ cuentas Stripe",
+        "30+ negocios, 200+ profesionales freelance"
+      ]
     }
   },
   {
     "company": "Plexus Tech",
     "position": {
-      "en": "Application Developer",
-      "es": "Desarrollador de aplicaciones"
+      "en": "Front-end developer",
+      "es": "Desarrollador de front-end"
     },
     "type": {
       "en": "Full-time",
@@ -51,20 +61,29 @@
       "en": "1 year 11 months",
       "es": "1 año 11 meses"
     },
-    "technologies": [
-      "React Native",
-      "React.js"
-    ],
+    "technologies": ["React Native", "React.js", "TypeScript"],
     "description": {
-      "en": "Web and mobile application development using React and React Native, delivering scalable solutions for diverse clients.",
-      "es": "Desarrollo de aplicaciones web y móviles usando React y React Native, entregando soluciones escalables para diversos clientes."
+      "en": "Developed mobile and web applications across multiple client engagements in healthcare and e-commerce. Drove performance optimization and technical debt reduction under tight consulting deadlines.",
+      "es": "Desarrollé aplicaciones móviles y web en múltiples proyectos de consultoría en salud y e-commerce. Impulsé la optimización de rendimiento y reducción de deuda técnica bajo plazos ajustados."
+    },
+    "highlights": {
+      "en": [
+        "Reduced critical workflows from 7.9s to under 2s",
+        "Led React Native 0.61 → 0.64 migration",
+        "Resolved 15+ production issues in payments & APIs"
+      ],
+      "es": [
+        "Reducción de flujos críticos de 7,9s a menos de 2s",
+        "Liderazgo migración React Native 0.61 → 0.64",
+        "Resolución de 15+ incidencias en producción"
+      ]
     }
   },
   {
     "company": "Bexfy",
     "position": {
-      "en": "Front-end Developer",
-      "es": "Desarrollador de front-end"
+      "en": "Junior front-end developer",
+      "es": "Desarrollador de front-end júnior"
     },
     "type": {
       "en": "Full-time",
@@ -79,16 +98,22 @@
       "en": "2 years 8 months",
       "es": "2 años 8 meses"
     },
-    "technologies": [
-      "React Native",
-      "Angular",
-      "Adobe XD",
-      "Apache Cordova",
-      "React.js"
-    ],
+    "technologies": ["React.js", "React Native", "Angular", "Cordova"],
     "description": {
-      "en": "Developing a platform for retailers to automate multimedia content across points of sale; including playback of audio, video and scent diffusion.",
-      "es": "Desarrollo de una plataforma para que los retailers automaticen contenido multimedia en diferentes puntos de venta; incluyendo reproducción de audio, vídeo y difusión de perfumes."
+      "en": "Built a cross-platform digital signage system spanning web, mobile, and touch interfaces for retail environments. Grew from junior to owning full feature delivery across audio, video, and scent modules.",
+      "es": "Construí un sistema de señalización digital multiplataforma que abarca web, móvil e interfaces táctiles para entornos retail. Lideré la entrega completa de funcionalidades en módulos de audio, vídeo y aromas."
+    },
+    "highlights": {
+      "en": [
+        "Enterprise platform used across multiple store locations",
+        "Cross-platform media system: Android, desktop, kiosks",
+        "Offline playback, sync, and AWS IoT integration"
+      ],
+      "es": [
+        "Plataforma enterprise usada en múltiples tiendas",
+        "Sistema multimedia multiplataforma: Android, escritorio, kioscos",
+        "Reproducción offline, sincronización e integración AWS IoT"
+      ]
     }
   }
 ]
