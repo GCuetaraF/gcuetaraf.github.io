@@ -98,7 +98,13 @@
   font-weight: var(--font-weight-normal);
   overflow: hidden;
   text-overflow: ellipsis;
-  min-height: 24rem; /* Minimum height to prevent layout shift during typing animation */
+  min-height: 10rem; /* Minimum height to prevent layout shift during typing animation */
+}
+
+@media (min-width: 768px) {
+  .hero__title {
+    min-height: 24rem; /* Minimum height to prevent layout shift during typing animation */
+  }
 }
 
 .hero__title-accent {
