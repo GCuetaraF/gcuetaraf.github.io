@@ -78,8 +78,7 @@ function updateLanguage(lang) {
     });
 
     elements.articleRows.forEach((row) => {
-      row.style.display =
-        row.getAttribute("data-lang") === lang ? "" : "none";
+      row.style.display = row.getAttribute("data-lang") === lang ? "" : "none";
     });
   });
 }
