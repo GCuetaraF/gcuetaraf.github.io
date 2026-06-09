@@ -1,116 +1,124 @@
 ---
 css:
-  - /css/variables.css
-  - /css/base.css
-  - /css/layout.css
-  - /css/blog.css
+- /css/variables.css
+- /css/base.css
+- /css/layout.css
+- /css/blog.css
 ---
 
 <!DOCTYPE html>
 <html lang="{{ lang or 'en' }}">
-  <head>
-    {% include "components/metadata.html" %}
 
-    {% for href in css %}
-      <link rel="stylesheet" href="{{ href | url }}">
-    {% endfor %}
+<head>
+  {% include "components/metadata.html" %}
 
-    <!-- Prism code highlighting (light theme) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css" crossorigin>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css" crossorigin>
-    <link rel="stylesheet" href="/css/prism-custom.css">
-  </head>
-  <body>
-    <a href="#main" class="skip-link">Skip to content</a>
-    {% include "components/site-header.html" %}
+  {% for href in css %}
+  <link rel="stylesheet" href="{{ href | url }}">
+  {% endfor %}
 
-    <main id="main" class="blog-post">
-      <div class="container">
-        <article class="post">
-          <header class="post__header">
-            <a href="/blog/" class="back-link">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5"/>
-                <path d="m12 19-7-7 7-7"/>
-              </svg>
-              <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
-            </a>
+  <!-- Prism code highlighting (light theme) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/themes/prism.min.css" crossorigin>
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.css"
+    crossorigin>
+  <link rel="stylesheet" href="/css/prism-custom.css">
+</head>
 
-            <h1 class="post__title">{{ title }}</h1>
+<body data-page-type="blog-post" data-blog-slug="{{ slug }}" data-blog-lang="{{ lang }}">
+  <a href="#main" class="skip-link">Skip to content</a>
+  {% include "components/site-header.html" %}
 
-            <div class="post__meta">
-              <time datetime="{{ date }}" class="post__date">
-                {{ date | readableDate }}
-              </time>
-              <span class="post__reading-time">
-                {{ content | readingTime }} min
-              </span>
-              {% if tags %}
-                <div class="post__tags">
-                  {% for tag in tags %}
-                    <span class="tech-tag">{{ tag }}</span>
-                  {% endfor %}
-                </div>
-              {% endif %}
+  <main id="main" class="blog-post">
+    <div class="container">
+      <article class="post">
+        <header class="post__header">
+          <a href="/blog/" class="back-link">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5" />
+              <path d="m12 19-7-7 7-7" />
+            </svg>
+            <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
+          </a>
+
+          <h1 class="post__title">{{ title }}</h1>
+
+          <div class="post__meta">
+            <time datetime="{{ date }}" class="post__date">
+              {{ date | readableDate }}
+            </time>
+            <span class="post__reading-time">
+              {{ content | readingTime }} min
+            </span>
+            {% if tags %}
+            <div class="post__tags">
+              {% for tag in tags %}
+              <span class="tech-tag">{{ tag }}</span>
+              {% endfor %}
             </div>
-          </header>
-
-          <div class="post__content">
-            {{ content | safe }}
+            {% endif %}
           </div>
+        </header>
 
-          <footer class="post__footer">
-            <a href="/blog/" class="btn btn--outline">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                <path d="M19 12H5"/>
-                <path d="m12 19-7-7 7-7"/>
-              </svg>
-              <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
-            </a>
-          </footer>
-        </article>
-      </div>
-    </main>
+        <div class="post__content">
+          {{ content | safe }}
+        </div>
 
-    {% include "components/site-footer.html" %}
-    {% include "components/mobile-nav.html" %}
+        <footer class="post__footer">
+          <a href="/blog/" class="btn btn--outline">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M19 12H5" />
+              <path d="m12 19-7-7 7-7" />
+            </svg>
+            <span data-lang-en="All Articles" data-lang-es="Todos los artículos">All Articles</span>
+          </a>
+        </footer>
+      </article>
+    </div>
+  </main>
 
-    <script src="/js/language.js" defer></script>
-    <script src="/js/theme.js" defer></script>
+  {% include "components/site-footer.html" %}
+  {% include "components/mobile-nav.html" %}
 
-    <!-- Prism.js -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-typescript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-javascript.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-jsx.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-tsx.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-css.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-json.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-bash.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-markdown.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-yaml.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js" defer></script>
+  <script src="/js/language.js" defer></script>
+  <script src="/js/theme.js" defer></script>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function () {
-        document.querySelectorAll('pre code[class*="language-"]').forEach(function (code) {
-          const pre = code.parentElement;
-          const classMatch = code.className.match(/language-(\w+)/);
-          if (classMatch) {
-            const lang = classMatch[1];
-            code.className = 'language-' + lang;
-            if (!pre.classList.contains('language-' + lang)) {
-              pre.classList.add('language-' + lang);
-            }
+  <!-- Prism.js -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/prism.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-typescript.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-javascript.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-jsx.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-tsx.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-css.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-json.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-bash.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-markdown.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-yaml.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/components/prism-sql.min.js" defer></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/line-numbers/prism-line-numbers.min.js"
+    defer></script>
+  <script
+    src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.30.0/plugins/copy-to-clipboard/prism-copy-to-clipboard.min.js"
+    defer></script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      document.querySelectorAll('pre code[class*="language-"]').forEach(function (code) {
+        const pre = code.parentElement;
+        const classMatch = code.className.match(/language-(\w+)/);
+        if (classMatch) {
+          const lang = classMatch[1];
+          code.className = 'language-' + lang;
+          if (!pre.classList.contains('language-' + lang)) {
+            pre.classList.add('language-' + lang);
           }
-          pre.classList.add('line-numbers');
-        });
-        if (window.Prism) {
-          Prism.highlightAll();
         }
+        pre.classList.add('line-numbers');
       });
-    </script>
-  </body>
+      if (window.Prism) {
+        Prism.highlightAll();
+      }
+    });
+  </script>
+</body>
+
 </html>

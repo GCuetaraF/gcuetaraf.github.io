@@ -23,8 +23,10 @@
       <h1 class="hero__title">
         <span data-lang-en="{{ translations.en.hero.tagline }}" data-lang-es="{{ translations.es.hero.tagline }}">{{
           translations.en.hero.tagline }}</span>
-        <span class="hero__typing-text" data-lang-en="{{ translations.en.hero.accent | join('|') }}"
-          data-lang-es="{{ translations.es.hero.accent | join('|') }}" aria-live="polite"></span>
+        <span class="hero__typing-text hero__typing-text--loading"
+          data-phrases-en="{{ translations.en.hero.accent | join('|') }}"
+          data-phrases-es="{{ translations.es.hero.accent | join('|') }}" aria-live="polite">{{
+          translations.en.hero.accent[0] }}</span>
         <!-- <span class="hero__title-accent" data-lang-en="{{ translations.en.hero.titleAccent }}"
           data-lang-es="{{ translations.es.hero.titleAccent }}">{{ translations.en.hero.titleAccent }}</span> -->
       </h1>

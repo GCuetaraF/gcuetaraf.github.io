@@ -113,6 +113,11 @@
   position: relative;
 }
 
+/* Hide cursor during initial load, show first phrase as fallback */
+.hero__typing-text--loading::after {
+  display: none;
+}
+
 .hero__typing-text::after {
   content: "|";
   display: inline-block;

@@ -21,13 +21,19 @@
   // Get phrases from data attribute based on current language
   const getPhrases = () => {
     const lang = getCurrentLanguage();
-    const dataAttr = `data-lang-${lang}`;
+    const dataAttr = `data-phrases-${lang}`;
     const phrasesString = typingElement.getAttribute(dataAttr);
     return phrasesString ? phrasesString.split("|") : [];
   };
 
   let phrases = getPhrases();
   if (!phrases.length) return;
+
+  // Set initial content to first phrase for current language
+  typingElement.textContent = phrases[0];
+
+  // Remove loading class to show the cursor
+  typingElement.classList.remove("hero__typing-text--loading");
 
   let phraseIndex = 0;
   let charIndex = 0;
@@ -38,11 +44,14 @@
   let pauseAfterDeleting = prefersReducedMotion ? 0 : 500;
   let typingTimeout = null;
 
-  // If reduced motion is preferred, just show all phrases instantly without animation
+  // If reduced motion is preferred, just show the first phrase without animation
   if (prefersReducedMotion) {
     typingElement.textContent = phrases[0];
     return;
   }
+
+  // Clear any existing content (from the initial fallback)
+  typingElement.textContent = "";
 
   function type() {
     const currentPhrase = phrases[phraseIndex];

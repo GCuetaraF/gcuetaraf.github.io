@@ -3,8 +3,8 @@
     "name": "Personal Media Tracker",
     "url": "https://github.com/gcuetaraf/personal-media-tracker",
     "description": {
-      "en": "Unified media consumption tracker aggregating games, videos, shows, and comicbooks from multiple platforms into a single TypeScript+Supabase application.",
-      "es": "Aplicación full-stack de seguimiento multimedia con integraciones de APIs externas (TMDB, Google Books), valoraciones personales, progreso de visionado/lectura y sincronización entre dispositivos."
+      "en": "Unified media consumption tracker aggregating games, videos, shows, and comicbooks from multiple platforms into a single TypeScript + Supabase application.",
+      "es": "Rastreador unificado de consumo de medios que agrega juegos, videos, series y cómics de múltiples plataformas en una sola aplicación con TypeScript y Supabase."
     },
     "highlights": {
       "en": [
@@ -20,13 +20,13 @@
         "Validación de datos con Zod"
       ]
     },
-    "technologies": ["React", "Node.js", "Express", "Supabase", "TMDB API"],
+    "technologies": ["Node.js", "Express", "Supabase", "Zod"],
     "status": "active",
     "featured": true,
     "order": 1
   },
   {
-    "name": "eg-lierno-app",
+    "name": "Lierno App",
     "url": "https://github.com/GCuetaraF/eg-lierno-app",
     "description": {
       "en": "Collaborative D&D campaign manager with dynamic character sheets, encounter tracking, real-time party coordination, and dungeon master tools.",

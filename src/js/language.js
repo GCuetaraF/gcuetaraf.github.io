@@ -17,11 +17,18 @@ function cacheLanguageElements() {
 
   cachedElements = {
     textElements: document.querySelectorAll("[data-lang-en], [data-lang-es]"),
-    htmlElements: document.querySelectorAll("[data-html-lang-en], [data-html-lang-es]"),
-    hrefElements: document.querySelectorAll("[data-lang-en-href], [data-lang-es-href]"),
+    htmlElements: document.querySelectorAll(
+      "[data-html-lang-en], [data-html-lang-es]",
+    ),
+    hrefElements: document.querySelectorAll(
+      "[data-lang-en-href], [data-lang-es-href]",
+    ),
     langButtons: document.querySelectorAll(".lang-btn"),
-    langElements: Array.from(document.querySelectorAll("[lang]")).filter((el) => el !== document.documentElement),
-    blogCards: document.querySelectorAll(".article-row[data-lang]"),
+    langElements: Array.from(document.querySelectorAll("[lang]")).filter(
+      (el) => el !== document.documentElement,
+    ),
+    blogCards: document.querySelectorAll(".blog-card[data-lang]"),
+    articleRows: document.querySelectorAll(".article-row[data-lang]"),
   };
 
   return cachedElements;
@@ -66,7 +73,13 @@ function updateLanguage(lang) {
     });
 
     elements.blogCards.forEach((card) => {
-      card.style.display = card.getAttribute("data-lang") === lang ? "" : "none";
+      card.style.display =
+        card.getAttribute("data-lang") === lang ? "" : "none";
+    });
+
+    elements.articleRows.forEach((row) => {
+      row.style.display =
+        row.getAttribute("data-lang") === lang ? "" : "none";
     });
   });
 }
