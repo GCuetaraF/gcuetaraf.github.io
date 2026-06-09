@@ -1,43 +1,80 @@
 [
   {
-    "name": "eg-lierno-app",
-    "url": "https://github.com/GCuetaraF/eg-lierno-app",
-    "description": {
-      "en": "Frontend for a role-playing game character sheet application.",
-      "es": "Aplicación fullstack para gestión de campañas de D&D."
-    },
-    "technologies": [
-      "React",
-      "Node.js"
-    ],
-    "featured": true,
-    "order": 2
-  },
-  {
-    "name": "personal-media-tracker",
+    "name": "Personal Media Tracker",
     "url": "https://github.com/gcuetaraf/personal-media-tracker",
     "description": {
-      "en": "A personal media tracking application for managing movies, series, and books.",
-      "es": "Una aplicación personal para el seguimiento de películas, series y libros."
+      "en": "Unified media consumption tracker aggregating games, videos, shows, and comicbooks from multiple platforms into a single TypeScript + Supabase application.",
+      "es": "Rastreador unificado de consumo de medios que agrega juegos, videos, series y cómics de múltiples plataformas en una sola aplicación con TypeScript y Supabase."
     },
-    "technologies": [
-      "React",
-      "Node.js",
-      "Express"
-    ],
+    "highlights": {
+      "en": [
+        "Domain Driven Design",
+        "Cron jobs for external API sync",
+        "External API aggregation",
+        "Data validation with Zod"
+      ],
+      "es": [
+        "Diseño orientado al dominio",
+        "Tareas programadas para sincronización con APIs externas",
+        "Agregación de APIs externas",
+        "Validación de datos con Zod"
+      ]
+    },
+    "technologies": ["Node.js", "Express", "Supabase", "Zod"],
+    "status": "active",
     "featured": true,
     "order": 1
   },
   {
+    "name": "Lierno App",
+    "url": "https://github.com/GCuetaraF/eg-lierno-app",
+    "description": {
+      "en": "Collaborative D&D campaign manager with dynamic character sheets, encounter tracking, real-time party coordination, and dungeon master tools.",
+      "es": "Gestor colaborativo de campañas de D&D con fichas de personaje dinámicas, seguimiento de encuentros, coordinación de grupo en tiempo real y herramientas para dungeon master."
+    },
+    "highlights": {
+      "en": [
+        "Real-time collaboration",
+        "Complex state management",
+        "Custom character builder",
+        "PDF export"
+      ],
+      "es": [
+        "Colaboración en tiempo real",
+        "Gestión de estado complejo",
+        "Constructor de personajes",
+        "Exportación a PDF"
+      ]
+    },
+    "technologies": ["React", "Material UI", "Node.js", "MongoDB", "Socket.io"],
+    "status": "archived",
+    "featured": true,
+    "order": 2
+  },
+  {
     "name": "gcuetaraf.github.io",
     "url": "https://github.com/GCuetaraF/gcuetaraf.github.io",
+    "demo": "https://gcuetaraf.github.io",
     "description": {
-      "en": "The professional portfolio of a web developer.",
-      "es": "El portafolio profesional de un desarrollador web."
+      "en": "This portfolio. Editorial typography, bilingual content, dark mode, automated PDF CV generation, and zero runtime frameworks.",
+      "es": "Este portfolio. Tipografía editorial, contenido bilingüe, modo oscuro, generación automática de CV en PDF y cero frameworks en runtime."
     },
-    "technologies": [
-      "Eleventy"
-    ],
+    "highlights": {
+      "en": [
+        "100% static, zero JS frameworks",
+        "Bilingual (EN/ES) with View Transitions",
+        "Automated OG images & PDF CV",
+        "OKLCH color system"
+      ],
+      "es": [
+        "100% estático, cero frameworks JS",
+        "Bilingüe (EN/ES) con View Transitions",
+        "OG images y CV PDF automatizados",
+        "Sistema de color OKLCH"
+      ]
+    },
+    "technologies": ["Eleventy", "Vanilla CSS", "Vanilla JS", "Puppeteer"],
+    "status": "active",
     "featured": true,
     "order": 4
   }

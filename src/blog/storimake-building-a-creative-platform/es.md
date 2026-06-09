@@ -1,8 +1,8 @@
 ---
-title: Storimake - 3 años construyendo una plataforma creativa
+title: "Storimake: 3 años construyendo una plataforma creativa"
 date: 2026-06-02
-tags: ["web-dev"]
-description: Este artículo comparte la arquitectura, desafíos y lecciones aprendidas al desarrollar una plataforma que conecta clientes con profesionales creativos para producir contenido a escala.
+tags: ["architecture", "platform", "nextjs"]
+description: Arquitectura, desafíos y lecciones escalando una plataforma de producción de contenido que conecta clientes con profesionales creativos.
 thumb:
   base: https://images.pexels.com/photos/3062541/pexels-photo-3062541.jpeg
 ---

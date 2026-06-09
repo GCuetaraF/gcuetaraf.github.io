@@ -1,8 +1,8 @@
 ---
-title: Plexus Tech - Consultoría, Deuda Técnica y Desarrollo Móvil
+title: "Consultoría, deuda técnica y la realidad del desarrollo móvil"
 date: 2024-03-22
-tags: ["web-dev", "mobile-dev"]
-description: Lecciones aprendidas trabajando como desarrollador móvil en un entorno de consultoría, gestionando bases de código legacy y equilibrando demandas de clientes con sostenibilidad técnica.
+tags: ["react-native", "consulting", "technical-debt"]
+description: Lecciones trabajando como desarrollador móvil en consultoría — gestionando codebases legacy y equilibrando demandas de clientes con sostenibilidad técnica.
 thumb:
   base: https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg
 ---

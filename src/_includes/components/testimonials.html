@@ -1,0 +1,31 @@
+<!-- Testimonials section — uncomment and populate testimonials.json to activate -->
+{% if testimonials.length > 0 and testimonials[0].author != "Name Surname" %}
+<section class="testimonials section" id="testimonials">
+  <div class="section__container">
+    <div class="testimonials__header">
+      <h2 class="testimonials__title">
+        <span data-lang-en="What People Say" data-lang-es="Lo que dicen">What People Say</span>
+      </h2>
+      <span class="section-label">
+        <span data-lang-en="(05) — Voices" data-lang-es="(05) — Voces">(05) — Voices</span>
+      </span>
+    </div>
+
+    <div class="testimonials__grid">
+      {% for testimonial in testimonials %}
+        <blockquote class="testimonial-card">
+          <p class="testimonial-card__quote">
+            <span data-lang-en="{{ testimonial.quote.en }}" data-lang-es="{{ testimonial.quote.es }}">{{ testimonial.quote.en }}</span>
+          </p>
+          <footer class="testimonial-card__author">
+            <cite class="testimonial-card__name">{{ testimonial.author }}</cite>
+            <span class="testimonial-card__role">
+              <span data-lang-en="{{ testimonial.role.en }}" data-lang-es="{{ testimonial.role.es }}">{{ testimonial.role.en }}</span>
+            </span>
+          </footer>
+        </blockquote>
+      {% endfor %}
+    </div>
+  </div>
+</section>
+{% endif %}

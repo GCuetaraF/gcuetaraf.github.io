@@ -1,8 +1,8 @@
 ---
-title: How I built my media tracker
+title: "Building a Personal Media Tracker from Scratch"
 date: 2026-02-22
-tags: ["web-dev", "media"]
-description: In order to manage all the media I interact with, I created a managed system which tracks and stores the information in an external database that I can later consume in any of my applications.
+tags: ["side-project", "api-design", "node"]
+description: A fullstack side project for tracking movies, series, and books — from API design to a React frontend with external database sync.
 thumb:
   base: https://images.unsplash.com/photo-1616530940355-351fabd9524b?w=800&h=450&fit=crop
 ---

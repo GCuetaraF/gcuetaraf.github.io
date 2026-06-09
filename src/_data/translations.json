@@ -5,13 +5,21 @@
       "about": "About",
       "experience": "Experience",
       "projects": "Projects",
-      "blog": "Blog",
+      "blog": "Articles",
       "contact": "Contact"
     },
     "hero": {
       "greeting": "Hi, I'm",
-      "tagline": "Software developer | Web enthusiast",
-      "about": "I work as a full-time web developer in both client-facing and management applications. I specialize in the <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\" target=\"_blank\">back-of-the-front-end</a> designing client architecture, integrating third-party APIs, managing business logic and working with both designers and backend developers to ensure product quality.",
+      "tagline": "Making ideas into",
+      "accent": [
+        "distinct interfaces",
+        "digital experiences",
+        "scalable products",
+        "unique software"
+      ],
+      "about": "Senior frontend engineer with 7+ years building accessible, fast interfaces with personality for product and brand.",
+      "title": " — frontend engineer",
+      "titleAccent": "Gabriel C.",
       "cta": {
         "projects": "View Projects",
         "cv": "Download CV"
@@ -19,7 +27,7 @@
     },
     "about": {
       "title": "What I Do",
-      "description": "I build modern web applications with a focus on clean architecture, seamless integrations, and exceptional user experiences. From designing scalable frontend systems to implementing robust backend solutions, I bring ideas to life through code.",
+      "description": "I build modern web applications with a focus on clean architecture, seamless integrations, and exceptional user experiences.",
       "skills": {
         "frontend": "Frontend Development",
         "backend": "Backend Development",
@@ -43,19 +51,19 @@
       "title": "Recent Articles",
       "viewAll": "View All Articles",
       "readMore": "Read More",
-      "readTime": "min read"
+      "readTime": "min"
     },
     "contact": {
       "title": "Let's Connect",
       "subtitle": "Feel free to reach out for collaborations or just a friendly chat",
       "email": "Email",
-      "copy": "Copy to clipboard",
+      "copy": "Copy",
       "copied": "Copied!",
       "social": "Find me on"
     },
     "footer": {
       "rights": "All rights reserved",
-      "builtWith": "Built with Eleventy & love"
+      "builtWith": "Designed and built in Barcelona"
     }
   },
   "es": {
@@ -64,13 +72,20 @@
       "about": "Sobre mí",
       "experience": "Experiencia",
       "projects": "Proyectos",
-      "blog": "Blog",
+      "blog": "Artículos",
       "contact": "Contacto"
     },
     "hero": {
-      "greeting": "Hola, soy",
-      "tagline": "Desarrollador de software | Entusiasta web",
-      "about": "Trabajo como desarrollador web full-time en aplicaciones tanto de cara al cliente como de gestión. Me especializo en el <a href=\"https://bradfrost.com/blog/post/front-of-the-front-end-and-back-of-the-front-end-web-development/\" target=\"_blank\">back-of-the-front-end</a> diseñando arquitectura de cliente, integrando APIs de terceros, gestionando lógica de negocio y trabajando tanto con diseñadores como con desarrolladores backend para asegurar la calidad del producto.",
+      "tagline": "Convierto ideas en",
+      "accent": [
+        "interfaces memorables",
+        "experiencias digitales",
+        "producto que escala",
+        "software con personalidad"
+      ],
+      "about": "Ingeniero frontend senior con más de 7 años construyendo interfaces accesibles, rápidas y con personalidad para producto y marca.",
+      "title": " — ingeniero frontend",
+      "titleAccent": "Gabriel Cuétara",
       "cta": {
         "projects": "Ver Proyectos",
         "cv": "Descargar CV"
@@ -78,7 +93,7 @@
     },
     "about": {
       "title": "Lo que hago",
-      "description": "Construyo aplicaciones web modernas con un enfoque en arquitectura limpia, integraciones fluidas y experiencias de usuario excepcionales. Desde diseñar sistemas frontend escalables hasta implementar soluciones backend robustas, doy vida a ideas a través del código.",
+      "description": "Construyo aplicaciones web modernas con un enfoque en arquitectura limpia, integraciones fluidas y experiencias de usuario excepcionales.",
       "skills": {
         "frontend": "Desarrollo Frontend",
         "backend": "Desarrollo Backend",
@@ -103,19 +118,19 @@
       "title": "Artículos Recientes",
       "viewAll": "Ver Todos los Artículos",
       "readMore": "Leer Más",
-      "readTime": "min de lectura"
+      "readTime": "min"
     },
     "contact": {
       "title": "Conectemos",
       "subtitle": "No dudes en contactarme para colaboraciones o simplemente para charlar",
       "email": "Email",
-      "copy": "Copiar al portapapeles",
+      "copy": "Copiar",
       "copied": "¡Copiado!",
       "social": "Encuéntrame en"
     },
     "footer": {
       "rights": "Todos los derechos reservados",
-      "builtWith": "Hecho con Eleventy y cariño"
+      "builtWith": "Diseñado y construido en Barcelona"
     }
   }
 }

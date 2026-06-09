@@ -1,0 +1,43 @@
+---
+layout: base.html
+title: "404"
+permalink: /404.html
+css:
+  - /css/variables.css
+  - /css/base.css
+  - /css/layout.css
+---
+
+<a href="#main" class="skip-link">Skip to content</a>
+{% include "components/site-header.html" %}
+
+<main id="main" class="section">
+  <div class="section__container" style="text-align: center; min-height: 60vh; display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <p style="font-family: var(--font-mono); font-size: var(--font-size-xs); text-transform: uppercase; letter-spacing: var(--tracking-wider); color: var(--color-text-muted); margin-bottom: 2rem;">
+      <span data-lang-en="Error 404" data-lang-es="Error 404">Error 404</span>
+    </p>
+
+    <h1 style="font-family: var(--font-serif); font-size: clamp(2.5rem, 8vw, 5rem); line-height: var(--line-height-tight); margin-bottom: 1.5rem;">
+      <span data-lang-en="Page not found" data-lang-es="Página no encontrada">Page not found</span>
+    </h1>
+
+    <p style="font-size: var(--font-size-lg); color: var(--color-text-secondary); max-width: 40ch; margin-bottom: 3rem;">
+      <span data-lang-en="The page you're looking for doesn't exist or has been moved." data-lang-es="La página que buscas no existe o ha sido movida.">The page you're looking for doesn't exist or has been moved.</span>
+    </p>
+
+    <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+      <a href="/" class="btn btn--primary">
+        <span data-lang-en="Back to Home" data-lang-es="Volver al inicio">Back to Home</span>
+      </a>
+      <a href="/blog/" class="btn btn--outline">
+        <span data-lang-en="Read Articles" data-lang-es="Leer artículos">Read Articles</span>
+      </a>
+    </div>
+  </div>
+</main>
+
+{% include "components/site-footer.html" %}
+{% include "components/mobile-nav.html" %}
+
+<script src="/js/language.js" defer></script>
+<script src="/js/theme.js" defer></script>

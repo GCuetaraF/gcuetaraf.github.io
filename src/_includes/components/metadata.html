@@ -1,7 +1,22 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="view-transition" content="same-origin">
 
+<!-- Prevent flash of wrong theme -->
+<script>
+  (function() {
+    var t = localStorage.getItem('preferredTheme');
+    if (t) { document.documentElement.setAttribute('data-theme', t); }
+    else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+      document.documentElement.setAttribute('data-theme', 'dark');
+    }
+  })();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Gochi+Hand&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
 
@@ -39,3 +54,48 @@
 <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
 <link rel="icon" type="image/x-icon" href="/assets/favicon.ico">
 <link rel="apple-touch-icon" href="/assets/favicon.svg">
+<link rel="alternate" type="application/atom+xml" title="Gabriel Cuétara — Articles" href="/feed.xml">
+
+<!-- Structured Data (JSON-LD) -->
+{% if isArticle %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "{{ title }}",
+  "description": "{{ description or '' }}",
+  "datePublished": "{{ date.toISOString() if date else '' }}",
+  "author": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}",
+    "url": "{{ site.url }}"
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "{{ site.author.name }}"
+  },
+  "url": "{{ site.url }}{{ page.url }}",
+  "image": "{{ socialImage }}",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{ site.url }}{{ page.url }}"
+  }
+}
+</script>
+{% else %}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "{{ site.author.name }}",
+  "jobTitle": "{{ site.title }}",
+  "url": "{{ site.url }}",
+  "email": "{{ site.author.email }}",
+  "sameAs": [
+    "{{ site.author.github }}",
+    "{{ site.author.linkedin }}"
+  ],
+  "knowsAbout": ["Frontend Development", "React", "Next.js", "TypeScript", "React Native", "Web Accessibility"]
+}
+</script>
+{% endif %}

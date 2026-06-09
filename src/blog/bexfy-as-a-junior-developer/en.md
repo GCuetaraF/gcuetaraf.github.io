@@ -1,8 +1,8 @@
 ---
-title: Bexfy - Learning to Build Cross-Platform Solutions as a Junior Developer
+title: "What My First Job Taught Me About Shipping Software"
 date: 2023-11-05
-tags: ["web-dev", "software-dev"]
-description: Reflections on inheriting and extending a multi-platform digital signage system across web, mobile, and touch interfaces as my first professional role.
+tags: ["first-job", "cross-platform", "growth"]
+description: Reflections on inheriting a multi-platform digital signage system and growing from junior to owning feature delivery across web, mobile, and touch.
 thumb:
   base: https://images.pexels.com/photos/1827234/pexels-photo-1827234.jpeg
 ---
