@@ -3,10 +3,10 @@ layout: base.html
 title: Blog
 permalink: /blog/
 css:
-  - /css/variables.css
-  - /css/base.css
-  - /css/layout.css
-  - /css/blog-listing.css
+- /css/variables.css
+- /css/base.css
+- /css/layout.css
+- /css/blog-listing.css
 ---
 
 <a href="#main" class="skip-link">Skip to content</a>
@@ -17,8 +17,8 @@ css:
     <header class="blog-listing__header">
       <a href="/" class="back-link">
         <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-          <path d="M19 12H5"/>
-          <path d="m12 19-7-7 7-7"/>
+          <path d="M19 12H5" />
+          <path d="m12 19-7-7 7-7" />
         </svg>
         <span data-lang-en="Home" data-lang-es="Inicio">Home</span>
       </a>
@@ -27,7 +27,8 @@ css:
         <span data-lang-en="Articles" data-lang-es="Artículos">Articles</span>
       </h1>
       <p class="blog-listing__subtitle">
-        <span data-lang-en="Writing about architecture, front-end engineering, and lessons from building products." data-lang-es="Escribo sobre arquitectura, ingeniería front-end, y lecciones construyendo productos.">
+        <span data-lang-en="Writing about architecture, front-end engineering, and lessons from building products."
+          data-lang-es="Escribo sobre arquitectura, ingeniería front-end, y lecciones construyendo productos.">
           Writing about architecture, front-end engineering, and lessons from building products.
         </span>
       </p>
@@ -40,52 +41,53 @@ css:
       </button>
       {% set allTags = [] %}
       {% for post in collections.blogEn %}
-        {% if post.data.tags %}
-          {% for tag in post.data.tags %}
-            {% if tag not in allTags %}
-              {% set allTags = (allTags.push(tag), allTags) %}
-            {% endif %}
-          {% endfor %}
-        {% endif %}
+      {% if post.data.tags %}
+      {% for tag in post.data.tags %}
+      {% if tag not in allTags %}
+      {% set allTags = (allTags.push(tag), allTags) %}
+      {% endif %}
+      {% endfor %}
+      {% endif %}
       {% endfor %}
       {% for tag in allTags | sort %}
-        <button class="tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
+      <button class="tag-filter" data-tag="{{ tag }}">{{ tag }}</button>
       {% endfor %}
     </div>
 
     <div class="blog-listing__grid">
       {% set index = 1 %}
       {% for post in collections.blog %}
-        <article class="blog-card" data-lang="{{ post.data.lang }}" data-tags="{{ post.data.tags | join(',') if post.data.tags else '' }}">
-          <div class="blog-card__content">
-            <h2 class="blog-card__title">
-              <a href="{{ post.url }}">{{ post.data.title }}</a>
-            </h2>
+      <article class="blog-card" data-lang="{{ post.data.lang }}"
+        data-tags="{{ post.data.tags | join(',') if post.data.tags else '' }}">
+        <div class="blog-card__content">
+          <h2 class="blog-card__title">
+            <a href="{{ post.url }}">{{ post.data.title }}</a>
+          </h2>
 
-            {% if post.data.description %}
-              <p class="blog-card__excerpt">{{ post.data.description }}</p>
-            {% endif %}
+          {% if post.data.description %}
+          <p class="blog-card__excerpt">{{ post.data.description }}</p>
+          {% endif %}
 
-            {% if post.data.tags %}
-              <div class="blog-card__tags">
-                {% for tag in post.data.tags %}
-                  <span class="tech-tag">{{ tag }}</span>
-                {% endfor %}
-              </div>
-            {% endif %}
+          {% if post.data.tags %}
+          <div class="blog-card__tags">
+            {% for tag in post.data.tags %}
+            <span class="tech-tag">{{ tag }}</span>
+            {% endfor %}
           </div>
+          {% endif %}
+        </div>
 
-          <div class="blog-card__meta">
-            <time datetime="{{ post.date }}" class="blog-card__date">
-              {{ post.date | readableDate }}
-            </time>
-            <span class="blog-card__reading-time">
-              {{ post.templateContent | readingTime }}
-              <span data-lang-en="min" data-lang-es="min">min</span>
-            </span>
-          </div>
-        </article>
-        {% set index = index + 1 %}
+        <div class="blog-card__meta">
+          <time datetime="{{ post.date }}" class="blog-card__date">
+            {{ post.date | readableDate }}
+          </time>
+          <span class="blog-card__reading-time">
+            {{ post.templateContent | readingTime }}
+            <span data-lang-en="min" data-lang-es="min">min</span>
+          </span>
+        </div>
+      </article>
+      {% set index = index + 1 %}
       {% endfor %}
     </div>
   </div>
@@ -97,26 +99,42 @@ css:
 <script src="/js/language.js" defer></script>
 <script src="/js/theme.js" defer></script>
 <script>
-  document.addEventListener('DOMContentLoaded', function() {
+  document.addEventListener('DOMContentLoaded', function () {
     const filters = document.querySelectorAll('.tag-filter');
     const cards = document.querySelectorAll('.blog-card');
 
-    filters.forEach(function(btn) {
-      btn.addEventListener('click', function() {
+    function filterCards() {
+      const activeFilter = document.querySelector('.tag-filter.active');
+      const tag = activeFilter ? activeFilter.dataset.tag : 'all';
+      const currentLang = localStorage.getItem('language') || 'en';
+
+      cards.forEach(function (card) {
+        const cardLang = card.dataset.lang;
+        const cardTags = (card.dataset.tags || '').split(',');
+
+        // Check both language and tag
+        const matchesLang = cardLang === currentLang;
+        const matchesTag = tag === 'all' || cardTags.includes(tag);
+
+        card.style.display = (matchesLang && matchesTag) ? '' : 'none';
+      });
+    }
+
+    filters.forEach(function (btn) {
+      btn.addEventListener('click', function () {
         const tag = this.dataset.tag;
 
-        filters.forEach(function(b) { b.classList.remove('active'); });
+        filters.forEach(function (b) { b.classList.remove('active'); });
         btn.classList.add('active');
 
-        cards.forEach(function(card) {
-          if (tag === 'all') {
-            card.style.display = '';
-            return;
-          }
-          const cardTags = (card.dataset.tags || '').split(',');
-          card.style.display = cardTags.includes(tag) ? '' : 'none';
-        });
+        filterCards();
       });
     });
+
+    // Listen for language changes
+    window.addEventListener('languageChanged', filterCards);
+
+    // Initial filter on page load
+    filterCards();
   });
 </script>
