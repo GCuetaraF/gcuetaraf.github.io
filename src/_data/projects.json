@@ -14,16 +14,22 @@
         "Data validation with Zod"
       ],
       "es": [
-        "Diseño orientado al dominio",
         "Tareas programadas para sincronización con APIs externas",
         "Agregación de APIs externas",
+        "Diseño orientado al dominio",
         "Validación de datos con Zod"
       ]
     },
-    "technologies": ["Node.js", "Express", "Supabase", "Zod"],
+    "technologies": [
+      "Node.js",
+      "Express",
+      "Supabase",
+      "Zod"
+    ],
     "status": "active",
     "featured": true,
-    "order": 1
+    "order": 1,
+    "thumbnail": "personal-media-tracker.png"
   },
   {
     "name": "Lierno App",
@@ -46,10 +52,17 @@
         "Exportación a PDF"
       ]
     },
-    "technologies": ["React", "Material UI", "Node.js", "MongoDB", "Socket.io"],
+    "technologies": [
+      "React",
+      "Material UI",
+      "Node.js",
+      "MongoDB",
+      "Socket.io"
+    ],
     "status": "archived",
     "featured": true,
-    "order": 2
+    "order": 2,
+    "thumbnail": "lierno.png"
   },
   {
     "name": "gcuetaraf.github.io",
@@ -73,9 +86,15 @@
         "Sistema de color OKLCH"
       ]
     },
-    "technologies": ["Eleventy", "Vanilla CSS", "Vanilla JS", "Puppeteer"],
+    "technologies": [
+      "Eleventy",
+      "Vanilla CSS",
+      "Vanilla JS",
+      "Puppeteer"
+    ],
     "status": "active",
     "featured": true,
-    "order": 4
+    "order": 4,
+    "thumbnail": "portfolio.png"
   }
 ]

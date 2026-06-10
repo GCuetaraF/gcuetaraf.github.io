@@ -1,17 +1,62 @@
 [
   {
     "quote": {
-      "en": "Your testimonial text here.",
-      "es": "Tu texto de testimonio aquí."
+      "es": "No solo ejecuta con criterio técnico, sino que cuestiona decisiones cuando hace falta y propone soluciones y alternativas pensando en el impacto real para el usuario y para el negocio. Esa capacidad de ir más allá de la tarea, sumada a su calidad como desarrollador, lo han convertido en un gran apoyo durante todo el tiempo que hemos compartido juntos.\n\nNo dudaría en recomendar a Gabriel, y espero volver a coincidir en algún momento con él.",
+      "en": "He not only executes with technical expeertise, but also challenges decisions when needed and proposes solutions and alternatives with the real impact on the user and the business in mind. That ability to go beyond the task at hand, combined with his quality as a developer, made him a great support throughout the entire time we worked together.\n\nI wouldn't hesitate to recommend Gabriel, and I hope to cross paths with him again at some point."
     },
-    "author": "Name Surname",
+    "tagline": {
+      "es": "En Storimake he visto como Gabriel pasaba de ser un excelente desarrollador front-end a ser además una persona clave en el desarrollo de producto.",
+      "en": "At Storimake I watched Gabriel grow from an excellent front-end developer into a key player in product development as well."
+    },
+    "author": "Emilio Ríos",
     "role": {
-      "en": "Job Title at Company",
-      "es": "Puesto en Empresa"
+      "en": "CTO at Storimake",
+      "es": "CTO en Storimake"
     },
     "relationship": {
-      "en": "Worked together at Company",
-      "es": "Trabajamos juntos en Empresa"
-    }
+      "en": "Supervisor",
+      "es": "Supervisor"
+    },
+    "avatar": "emilio.jpg"
+  },
+  {
+    "quote": {
+      "es": "Gabriel es un desarrollador frontend con una gran capacidad técnica y un conocimiento profundo de las tecnologías con las que trabaja. Siempre ha demostrado una enorme facilidad para adaptarse a las necesidades del proyecto, incluso cuando ha sido necesario realizar cambios de tecnología o asumir nuevos retos técnicos.\n\nSu compromiso para que las cosas salieran bien y su orientación a la mejora continua marcaron una diferencia muy positiva en el equipo. Sin duda, es un profesional muy recomendable para cualquier equipo.",
+      "en": "Gabriel is a frontend developer with great technical ability and a deep knowledge of the technologies he works with. He has always shown an enormous ease in adapting to the needs of the project, even when it was necessary to change technologies or take on new technical challenges.\n\nHis commitment to getting things right and his focus on continuous improvement made a very positive difference in the team. Without a doubt, he is a highly recommendable professional for any team."
+    },
+    "tagline": {
+      "en": "I had the opportunity to work alongside Gabriel and I can only highlight positive aspects, both professionally and personally.",
+      "es": "Tuve la oportunidad de trabajar junto a Gabriel y solo puedo destacar aspectos positivos tanto a nivel profesional como personal."
+    },
+    "author": "Javier Esteban Sánchez",
+    "role": {
+      "es": "Desarrollador de software sénior",
+      "en": "Senior software developer"
+    },
+    "relationship": {
+      "en": "Worked on the same team",
+      "es": "Trabajó en el mismo equipo"
+    },
+    "avatar": "javi.jpg"
+  },
+  {
+    "quote": {
+      "es": "Destaca no solo por su capacidad técnica, sino también por su implicación en el producto, su actitud colaborativa y su facilidad para trabajar junto a diseño y el resto de áreas del equipo. Siempre busca entender el problema antes de plantear una solución y aporta ideas que mejoran tanto la experiencia de usuario como el resultado final.\n\nSin duda, un compañero con el que volvería a trabajar.",
+      "en": "He stands out not only for his technical ability, but also for his involvement in the product, his collaborative attitude, and his ease of working alongside design and the rest of the team's areas. He always seeks to understand the problem before proposing a solution, and he contributes ideas that improve both the user experience and the final result.\n\nWithout a doubt, a colleague I would gladly work with again."
+    },
+    "tagline": {
+      "en": "I was lucky enough to work with Gabriel on the same team, collaborating on projects where design and development had to move forward hand in hand.",
+      "es": "He tenido la suerte de trabajar con Gabriel en el mismo equipo y  colaborando en proyectos donde diseño y desarrollo debían avanzar de la mano."
+    },
+    "author": "Carla del Fueyo",
+    "role": {
+      "en": "UX/UI Designer",
+      "es": "Diseñadora UX/UI"
+    },
+    "relationship": {
+      "en": "Worked on the same team",
+      "es": "Trabajó en el mismo equipo"
+    },
+    "avatar": "carla.jpg"
   }
 ]

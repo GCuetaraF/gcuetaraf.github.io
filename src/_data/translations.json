@@ -47,6 +47,9 @@
       "viewSource": "View Source",
       "liveDemo": "Live Demo"
     },
+    "testimonials": {
+      "title": "What People Say"
+    },
     "blog": {
       "title": "Recent Articles",
       "viewAll": "View All Articles",
@@ -113,6 +116,9 @@
       "viewAll": "Ver Todos los Proyectos",
       "viewSource": "Ver Código",
       "liveDemo": "Demo en Vivo"
+    },
+    "testimonials": {
+      "title": "Lo que dicen"
     },
     "blog": {
       "title": "Artículos Recientes",

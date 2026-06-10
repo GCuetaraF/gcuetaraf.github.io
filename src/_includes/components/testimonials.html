@@ -1,31 +1,42 @@
-<!-- Testimonials section — uncomment and populate testimonials.json to activate -->
-{% if testimonials.length > 0 and testimonials[0].author != "Name Surname" %}
-<section class="testimonials section" id="testimonials">
-  <div class="section__container">
+<section class="testimonials" id="testimonials">
+  <div class="testimonials__inner">
     <div class="testimonials__header">
       <h2 class="testimonials__title">
-        <span data-lang-en="What People Say" data-lang-es="Lo que dicen">What People Say</span>
+        <span data-lang-en="{{ translations.en.testimonials.title }}"
+          data-lang-es="{{ translations.es.testimonials.title }}">{{ translations.en.testimonials.title }}</span>
       </h2>
       <span class="section-label">
-        <span data-lang-en="(05) — Voices" data-lang-es="(05) — Voces">(05) — Voices</span>
+        <span data-lang-en="(04) — Voices" data-lang-es="(04) — Voces">(04) — Voices</span>
       </span>
     </div>
 
     <div class="testimonials__grid">
       {% for testimonial in testimonials %}
         <blockquote class="testimonial-card">
+          <p class="testimonial-card__tagline" data-lang-en="{{ testimonial.tagline.en }}" data-lang-es="{{ testimonial.tagline.es }}">{{ testimonial.tagline.en }}</p>
           <p class="testimonial-card__quote">
-            <span data-lang-en="{{ testimonial.quote.en }}" data-lang-es="{{ testimonial.quote.es }}">{{ testimonial.quote.en }}</span>
+            <span data-lang-en="{{ testimonial.quote.en }}" data-lang-es="{{ testimonial.quote.es }}">{{
+            testimonial.quote.en }}</span>
           </p>
           <footer class="testimonial-card__author">
-            <cite class="testimonial-card__name">{{ testimonial.author }}</cite>
-            <span class="testimonial-card__role">
-              <span data-lang-en="{{ testimonial.role.en }}" data-lang-es="{{ testimonial.role.es }}">{{ testimonial.role.en }}</span>
-            </span>
+            {% if testimonial.avatar %}
+              <img src="/assets/images/testimonials/{{ testimonial.avatar }}" alt="{{ testimonial.author }}"
+            class="testimonial-card__avatar">
+            {% endif %}
+            <div class="testimonial-card__info">
+              <cite class="testimonial-card__name">{{ testimonial.author }}</cite>
+              <span class="testimonial-card__role">
+                <span data-lang-en="{{ testimonial.role.en }}" data-lang-es="{{ testimonial.role.es }}">{{
+                testimonial.role.en }}</span>
+              </span>
+              <span class="testimonial-card__relationship">
+                <span data-lang-en="{{ testimonial.relationship.en }}" data-lang-es="{{ testimonial.relationship.es }}">{{
+                testimonial.relationship.en }}</span>
+              </span>
+            </div>
           </footer>
         </blockquote>
       {% endfor %}
     </div>
   </div>
 </section>
-{% endif %}
