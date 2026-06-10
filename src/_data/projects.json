@@ -29,7 +29,7 @@
     "status": "active",
     "featured": true,
     "order": 1,
-    "thumbnail": "personal-media-tracker.png"
+    "thumbnail": "personal-media-tracker.webp"
   },
   {
     "name": "Lierno App",
@@ -62,7 +62,7 @@
     "status": "archived",
     "featured": true,
     "order": 2,
-    "thumbnail": "lierno.png"
+    "thumbnail": "lierno.webp"
   },
   {
     "name": "gcuetaraf.github.io",
@@ -95,6 +95,6 @@
     "status": "active",
     "featured": true,
     "order": 4,
-    "thumbnail": "portfolio.png"
+    "thumbnail": "portfolio.webp"
   }
 ]
