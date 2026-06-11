@@ -62,9 +62,7 @@ eleventyExcludeFromCollections: true
         left: 0;
         right: 0;
         bottom: 0;
-        background-image:
-          linear-gradient(rgba(200, 104, 66, 0.04) 1px, transparent 1px),
-          linear-gradient(90deg, rgba(200, 104, 66, 0.04) 1px, transparent 1px);
+        background-image: linear-gradient(rgba(200, 104, 66, 0.04) 1px, transparent 1px), linear-gradient(90deg, rgba(200, 104, 66, 0.04) 1px, transparent 1px);
         background-size: 60px 60px;
         mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
         -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 50%, black 30%, transparent 100%);
@@ -203,7 +201,7 @@ eleventyExcludeFromCollections: true
         {% if post.data.tags %}
           <div class="tags">
             {% for tag in post.data.tags | limit(4) %}
-              <span class="tag">{{ tag }}</span>
+              <span class="rounded-tag">{{ tag }}</span>
             {% endfor %}
           </div>
         {% endif %}
