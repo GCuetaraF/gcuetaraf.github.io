@@ -7,11 +7,11 @@ thumb:
   base: https://images.pexels.com/photos/1181263/pexels-photo-1181263.jpeg
 ---
 
-Trabajando en Plexus Tech ssignificó ahondar en sistemas que no diseñé, no elegí y al principio tampoco entendía completamente. Era trabajo de consulttoría, y eso significa una cosa de forma consistente: rara vez empiezas desde cero. Trabajó como desarrollador móvil en múltiples proyectos de cliente donde el trabajo no era solo construir nuevas features.
+Trabajando en Plexus Tech ssignificó ahondar en sistemas que no diseñé, no elegí y al principio tampoco entendía completamente. Era trabajo de consultoría, y eso significa una cosa de forma consistente: rara vez empiezas desde cero. Trabajé como desarrollador móvil en múltiples proyectos de cliente donde el trabajo no era solo construir nuevas features.
 
 ## El trabajo de verdad no era desarrollo
 
-A lo largo de los proyecctos un patrón resultó ser consistente: siempre había un backlog de features, un backlog de problemas téncicos y había siempre un sistema que había acumulado años de decisiones por parte de diferentes equipos.
+A lo largo de los proyectos un patrón resultó ser consistente: siempre había un backlog de features, un backlog de problemas téncicos y había siempre un sistema que había acumulado años de decisiones por parte de diferentes equipos.
 
 ## App móvil de e-commerce: Cuando la escala resulta en problemas de rendimiento
 
