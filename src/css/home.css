@@ -147,13 +147,7 @@
   color: var(--color-text-primary);
   font-weight: var(--font-weight-normal);
   overflow-wrap: break-word;
-  min-height: 12rem; /* Minimum height to prevent layout shift during typing animation */
-}
-
-@media (min-width: 768px) {
-  .hero__title {
-    min-height: 24rem; /* Minimum height to prevent layout shift during typing animation */
-  }
+  min-height: 3lh; /* Minimum height to prevent layout shift during typing animation */
 }
 
 .hero__title-accent {
